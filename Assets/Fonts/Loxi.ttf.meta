@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 018798a71dccd4b0fbee970102871b8a
+timeCreated: 1502542580
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: ??????Version 1.00
+  fontNames:
+  - Loxi
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

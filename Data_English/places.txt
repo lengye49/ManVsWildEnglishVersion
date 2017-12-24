@@ -1,0 +1,89 @@
+id,actionType,actionPara,Name,desc
+101,2,4100|5|1;4105|1|0.2,Stream,A small stream.
+102,5,100|115;101|153;102|153;103|27;104|86;105|153,Hunt,Hunt for food and materials.
+103,3,200;200;2100|95;2104|90;3102|100;3402|30;4100|100;4101|100;4103|90;4104|90;4110|80,Search,Search the place.
+201,0,20;0;1100|5|1;2103|1|1,Tree,Cut down trees for wood.
+202,4,4104|2|0.7;2104|2|0.5,Berry,Collect berries.
+203,5,200|103;201|185;202|85;203|125;204|48,Hunt,Hunt for food and materials.
+204,3,200;200;2101|90;2103|90;2104|90;3102|100;3402|30;4101|100;4103|90;4104|90;4110|80;4111|40,Search,Search the place.
+205,6,Monkey;The little monkey throws a peach at you.;10000,A Monkey,Get near and take a look.
+301,1,180;180;1101|5|1;2200|2|0.3;2201|2|0.3,Stone,Dig for materials.
+302,5,300|77;301|211;302|211;303|77;304|36,Hunt,Hunt for food and materials.
+303,3,200;200;2100|95;2101|90;2106|80;2200|70;2201|70;3102|100;3402|30;4101|100;4103|90,Search,Search the place.
+401,6,Mayor;Robbers and thieves are wondering around.Help us and kill them!;10001,Mayor,Talk with him.
+402,6,Bar Tender;Come on! Show me your courage!;10002,Bar,"Welcome, young man!"
+403,5,400|139;401|71;402|71,Hunt,Track suspicious man.
+404,3,150;150;2102|90;3102|100;3402|30;4101|100;400|50;404|50;4109|50,Search,Search the place.
+501,5,500|111;501|25;502|111;503|155,Hunt,Kill the bad guy.
+502,3,100;100;2102|90;2200|70;2201|70;3402|30;4101|100;400|50;404|50;4109|50,Search,Search the place.
+601,1,100;100;1101|2|0.5;2200|5|0.5;2201|5|0.5;2300|1|0.5;2301|1|0.5,Mine,Dig for materials.
+602,5,600|112;601|121;602|104;603|112;604|30;605|97,Hunt,Hunt for food and materials.
+603,3,150;150;2100|95;2104|90;2106|80;2107|80;2200|70;2201|70;2300|30;2301|30;2302|30;3102|100;3402|30;4109|50,Search,Search the place.
+701,4,4107|2|0.4;4106|1|0.5,Fish,Collect fish.
+702,5,700|135;701|128;702|400;703|20;2402|50,Hunt,Hunt for food and materials.
+703,3,150;150;2108|75;2303|30;3102|100;3402|30;4106|80;4108|40,Search,Search the place.
+801,6,Wolf Patriarch; For Honor！;10006,Patriarch,Talk with him.
+802,6,Worf Elder;Death is another way to live.;10007,Elder,Talk with him.
+803,5,800|50;810|200;811|200;812|50;813|50,Hunt,Track suspicious man.
+804,3,100;100;2102|90;2200|70;2201|70;2300|30;2301|30;2302|30;3102|100;3402|30;4101|100;400|50;4109|50,Search,Search the place.
+901,6,Snake Patriarch;We are the true protector of this land!;10011,Patriarch,Talk with him.
+902,6,Snake Elder;Victory is always accompanied with blood and killing.;10012,Elder,Talk with him.
+903,5,900|50;910|200;911|200;912|50;913|50,Hunt,Track suspicious man.
+904,3,100;100;2102|90;2200|70;2201|70;2300|30;2301|30;2302|30;3102|100;3402|30;4101|100;400|50;4109|50,Search,Search the place.
+1001,6,Bear Patriarch;For the honor of bear!;10016,Patriarch,Talk with him.
+1002,6,Bear Elder;The diamonds belong to us!;10017,Elder,Talk with him.
+1003,5,1000|50;1010|200;1011|200;1012|50;1013|50,Hunt,Track suspicious man.
+1004,3,100;100;2102|90;2200|70;2201|70;2300|30;2301|30;2302|30;3102|100;3402|30;4101|100;400|50;4109|50,Search,Search the place.
+1101,6,Gimli the Dwarf;Where are my ancestors? Follow my lead!;10021,Gimli,Talk with him.
+1102,3,80;80;2102|90;2300|30;2301|30;2302|30;2400|15;2401|15;2402|15;3102|100;3402|30;4101|100;400|50;4109|50,Search,Search the place.
+1201,6,Necromancer;Release my soul in the dungeon!Help me!;10026,Necromancer,Talk with him.
+1202,3,70;70;2100|95;2102|90;2105|80;2106|80;2107|80;2108|75;2109|75;3402|30,Search,Search the place.
+1301,5,1300|112;1301|400;1302|130;1303|84;1304|20;1305|62,Hunt,Hunt for food and materials.
+1302,0,30;0;1100|5|1;2103|1|1,Tree,Cut down trees for wood.
+1303,3,120;120;2101|90;2103|90;2104|90;3402|30;4101|100;4103|90;4104|90;4110|80;4111|40,Search,Search the place.
+1401,6,Greenleaf the Patriarch;Find a way to the dungeon and investigate it.;10024,Patriarch,Talk with him.
+1402,6,The Prophet;The dark is growing in the dungeon. It's in your way back home.;10025,Prophet,Talk with him.
+1403,3,30;30;2101|90;3402|30;4101|100;4104|90;4110|80;4109|50,Search,Search the place.
+1501,1,120;120;2200|1|0.5;2201|1|0.5;2300|2|0.5;2301|2|0.5;1101|3|0.5;2400|1|0.33;2401|1|0.2;2402|1|0.2,Mine,Dig for materials.
+1502,5,1500|107;1501|96;1502|112;1503|85,Hunt,Hunt for food and materials.
+1503,3,120;120;2104|90;2106|80;2200|70;2201|70;2300|30;2301|30;2302|30;2400|15;2401|15;2402|15;3402|30;4109|50,Search,Search the place.
+1601,5,1600|107;1601|107;1602|100;1603|35,Hunt,Hunt for food and materials.
+1602,3,90;90;2100|95;2101|90;2105|80;2106|80;2107|80;2109|75;2202|20;2405|15;3402|30;4103|90;4109|50,Search,Search the place.
+1701,5,1700|72;1701|15;1702|58;1703|70;1704|70,Hunt,Hunt for food and materials.
+1702,3,40;40;2106|80;2107|80;3402|30;4103|90;404|50,Search,Search the place.
+1801,5,1800|150;1801|5;1802|5;1803|5;1804|20,Hunt,Hunt for food and materials.
+1802,3,80;80;2100|95;2101|90;2102|90;2109|75;2400|15;2401|15;2402|15;2404|15;2407|15;3402|30;4103|90;4104|90,Search,Search the place.
+1901,5,1900|120;1901|50;1902|50;1903|100;1904|150;1905|70;1906|137;1907|110;1908|50;1909|110;1910|78;1911|25;1912|123,Hunt,Hunt for food and materials.
+1902,3,100;100;2100|95;2101|90;2102|90;2105|80;2106|80;2405|15;3102|100;3402|30;4103|90;4110|80;4111|40;4109|50,Search,Search the place.
+2001,5,2000|100;2001|30;2002|85;2003|15;2004|118,Hunt,Hunt for food and materials.
+2002,3,30;30;2100|95;3102|100;3402|30,Search,Search the place.
+2100,6,Guardian;Welcome.,Dungeon Guard,Talk with him.
+2101,5,2100|132;2101|107;2102|132;2103|97;2104|97;2105|79;2106|119;2107|87;2108|119;2109|97;2110|71;2111|87;2112|64;2113|64;2114|97;2115|79;2116|64;2117|146;2118|180;2119|146;2120|119,Hunt,Hunt for food and materials.
+2201,5,2200|300;2201|111;2202|200;2203|71;2402|100,Hunt,Hunt for food and materials.
+2202,3,50;50;2101|90;2108|75;2303|30;3402|30;4106|80;4108|40,Search,Search the place.
+2301,5,2300|224;2301|185;2302|86;2303|27;2402|50,Hunt,Hunt for food and materials.
+2302,3,60;60;2101|90;2108|75;2303|30;3402|30;4106|80;4108|40;4112|10,Search,Search the place.
+2401,5,2400|100;2401|100;2402|100;2403|100;2404|100;2405|100;2406|100;2407|100;2408|100;2409|100;2410|100;2411|100;2412|100;2413|100;2414|100;2415|100;2416|100;2417|100;2418|100;2419|100;2420|100;2421|100;2422|100;2423|100;2424|100;2425|100;2426|100;2427|100;2428|100;2429|100;2430|100;2431|100;2432|100;2433|100;2434|100;2435|100;2436|100;2437|100;2438|100;2439|100;2440|100;2441|100;2442|100;2443|100;2444|100;2445|100;2446|100;2447|100;2448|100;2449|100;2450|100;2451|100;2452|100;2453|100;2454|100;2455|100;2456|100;2457|100;2458|100;2459|100;2460|100,Hunt,Hunt for food and materials.
+2402,3,300;300;2100|95;2101|90;2103|90;2104|90;2106|80;2107|80;2108|75;2109|75;2200|70;2201|70;2300|30;2301|30;2302|30;2303|30;2400|15;2401|15;2402|15;2404|15;2405|15;2407|15;3102|100;3402|30;4100|100;4101|100;4103|90;4104|90;4108|40;4110|80;400|50;4109|50,Search,Search the place.
+2701,6,Ai Mosi;It's just a game of right in this world!<color=yellow><Challege him and get the Order out of the war.></color>;3008,Ai Mosi,The ruler of Order stares at you.
+2702,5,3000|10;3001|10;3002|10;3003|10;3004|10;3005|10;3006|10;3007|10;3009|100;3010|100;3011|100;3012|100;3013|100;3014|100;3015|100;3016|100;3017|100,Hunt,Defeat everyone int your way. 
+2703,3,2000;2000;400|100;403|100;2300|100;2301|100;2302|100;2400|100;2401|100;2402|100;2405|100;2410|20;3102|200;4104|200;4109|300;4110|100;4214|100;4204|20;0|1840,Search,Search the place.
+2801,6,Hurricane;Truth is eternal.Believe or die.<color=yellow><Challege him and get the Truth out of the war.></color>;3108,Hurricane,The ruler of Truth closed his eyes.
+2802,5,3100|10;3101|10;3102|10;3103|10;3104|10;3105|10;3106|10;3107|10;3109|100;3110|100;3111|100;3112|100;3113|100;3114|100;3115|100,Hunt,Defeat everyone int your way. 
+2803,3,2000;2000;400|100;403|100;2300|100;2301|100;2302|100;2400|100;2401|100;2402|100;2405|100;2411|20;3102|200;4104|200;4109|300;4110|100;4214|100;4204|20;0|1840,Search,Search the place.
+2901,6,Arwen;The power of Life protected the land. Nobody can slave us.<color=yellow><Challege her and get the Life out of the war.></color>;3208,Arwen,The ruler of Lift smiles at you.
+2902,5,3200|10;3201|10;3202|10;3203|10;3204|10;3205|10;3206|10;3207|10;3209|100;3210|100;3211|100;3212|100;3213|100;3214|100;3215|100;3216|100;3217|100;3218|100,Hunt,Defeat everyone int your way. 
+2903,3,2000;2000;400|100;403|100;2300|100;2301|100;2302|100;2400|100;2401|100;2402|100;2405|100;2412|20;3102|200;4104|200;4109|300;4110|100;4214|100;4204|20;0|1840,Search,Search the place.
+3001,6,Harrison;What a beautiful world. Devour it!<color=yellow><Challege him and get the Abyss out of the war.></color>;3308,Harrison,The ruler of Abyss exposed his fangs.
+3002,5,3300|10;3301|10;3302|10;3303|10;3304|10;3305|10;3306|10;3307|10;3309|100;3310|100;3311|100;3312|100;3313|100;3314|100;3315|100;3316|100,Hunt,Defeat everyone int your way. 
+3003,3,2000;2000;400|100;403|100;2300|100;2301|100;2302|100;2400|100;2401|100;2402|100;2405|100;2413|20;3102|200;4104|200;4109|300;4110|100;4214|100;4204|20;0|1840,Search,Search the place.
+3101,6,Skull Dragon;Death will come to you however powerful you are.<color=yellow><Challege him and get the Death out of the war.></color>;3408,Skull Dragon,The ruler of Death pretend to be sleeping.
+3102,5,3400|10;3401|10;3402|10;3403|10;3404|10;3405|10;3406|10;3407|10;3409|100;3410|100;3411|100;3412|100;3413|100;3414|100;3415|100;3416|100;3417|100,Hunt,Defeat everyone int your way. 
+3103,3,2000;2000;400|100;403|100;2300|100;2301|100;2302|100;2400|100;2401|100;2402|100;2405|100;2414|20;3102|200;4104|200;4109|300;4110|100;4214|100;4204|20;0|1840,Search,Search the place.
+2600,6,Old Man;The visitors are not friendly.They occupied our land and build there own cities. There are wars all over the land. Man and wizard ~ Elves and the undead ~ even devil from the abyss are fighting.Our Land will be destroyed! <color=yellow> Are you the Savior sent by God? Defeat their leaders and terminate the war. </color>,Old Man,Talk with him.
+2601,6,Diary;Jan.The visitors landed from overseas; Feb.They fought against elves; Apr.The Abyss invaded; July.Human civil war started. The Death escaped into the swamp and the Truth built towers in the northwest; ,A Diary,Check the diary.
+2602,6,Human KnightYou are not allowed to be here!;2602,Human Knight,Challenge
+2603,6,Master of Light;I will punish you on behalf of the sun!;2603,Master of Light,Challenge
+2604,6,Wood Elf;Leave here now!;2604,Wood Elf,Challenge
+2605,6,Flying Devil;Nice flesh...;2605,Flying Devil,Challenge
+2606,6,Necromancer;Give me your bones.;2606,Necromancer,Challenge

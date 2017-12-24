@@ -1,0 +1,12 @@
+id,Name,monsterId,weight
+100,A mouse,10,100
+101,A crow,11,100
+102,A robber,12,100
+103,A snitch,13,90
+104,A savage,14,80
+200,Robinhood,20,60
+201,Black Beard,21,60
+202,James,22,60
+203,Baby Face,23,40
+204,The Amnesty,24,40
+205,Dick Turpin,25,40
