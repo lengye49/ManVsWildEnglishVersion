@@ -62,7 +62,7 @@ public class RoomActions : MonoBehaviour {
 
 	void SetRestState(){
 		restTimeText.text = restTime + "h";
-		restRecoverText.text = "可增加 " + GameConfigs.StrengthRecoverPerRestHour [GameData._playerData.BedRoomOpen - 1] * restTime + " 体力, " + GameConfigs.SpiritRecoverPerRestHour * restTime + "点精神";
+		restRecoverText.text = "Energy +" + GameConfigs.StrengthRecoverPerRestHour [GameData._playerData.BedRoomOpen - 1] * restTime + ", Spirit +" + GameConfigs.SpiritRecoverPerRestHour * restTime + ".";
 		addButton.interactable = !(restTime >= restTimeMax);
 		reduceButton.interactable = !(restTime <= restTimeMin);
 	}
@@ -75,8 +75,8 @@ public class RoomActions : MonoBehaviour {
 	}
 
 	void SetNormalBathState(){
-		bathMatText.text = "水 ×" + GameConfigs.WaterForBath;
-		normalBathRecoverText.text = "可降低" + GameConfigs.TempRecoverPerNormalBath + "℃体温, 增加 " + GameConfigs.SpiritRecoverPerBath+"点精神";
+		bathMatText.text = "Water ×" + GameConfigs.WaterForBath;
+		normalBathRecoverText.text = "Temp. -" + GameConfigs.TempRecoverPerNormalBath + "℃, Spirit +" + GameConfigs.SpiritRecoverPerBath+".";
 
 		if (_gameData.CountInHome (4100) < GameConfigs.WaterForBath) {
 			bathMatText.color = Color.red;
@@ -88,9 +88,9 @@ public class RoomActions : MonoBehaviour {
 	}
 
 	void SetHotBathState(){
-		hotBathMat1Text.text = "水 ×" + GameConfigs.WaterForBath;
-		hotBathMat2Text.text = "木材 ×" + GameConfigs.WoodForHotBath;
-		hotBathRecoverText.text = "可增加" + GameConfigs.TempRecoverPerHotBath + "℃体温, 增加" + GameConfigs.SpiritRecoverPerBath+"点精神";
+		hotBathMat1Text.text = "Water ×" + GameConfigs.WaterForBath;
+		hotBathMat2Text.text = "Wood ×" + GameConfigs.WoodForHotBath;
+		hotBathRecoverText.text = "Temp. +" + GameConfigs.TempRecoverPerHotBath + "℃, Spirit +" + GameConfigs.SpiritRecoverPerBath+".";
 
 		if (_gameData.CountInHome (4100) < GameConfigs.WaterForBath) {
 			hotBathMat1Text.color = Color.red;

@@ -22,11 +22,11 @@ id,name,maxLv,req,tips,timeCost
 2,Farm,4,3102|20;4100|20,Increase 1 farmland.,10
 3,Farm,4,3102|20;4100|20,Increase 1 farmland.,10
 4,Farm,4,3102|20;4100|20,Increase 1 farmland.,10
-1,PetCage,5,1100|20;2104|20;2103|20,A place to keep your pet.,5
-2,PetCage,5,1100|20;2104|20;2103|20,Increase 10 pet space.,5
-3,PetCage,5,1100|20;2104|20;2103|20,Increase 10 pet space.,5
-4,PetCage,5,1100|20;2104|20;2103|20,Increase 10 pet space.,5
-5,PetCage,5,1100|20;2104|20;2103|20,Increase 10 pet space.,5
+1,Pets,5,1100|20;2104|20;2103|20,A place to keep your pet.,5
+2,Pets,5,1100|20;2104|20;2103|20,Increase 10 pet space.,5
+3,Pets,5,1100|20;2104|20;2103|20,Increase 10 pet space.,5
+4,Pets,5,1100|20;2104|20;2103|20,Increase 10 pet space.,5
+5,Pets,5,1100|20;2104|20;2103|20,Increase 10 pet space.,5
 1,Well,1,1100|30;1101|30,A place to collect drinking water.,10
 1,Achievement,1,,achievement,0
 1,Altar,1,1101|30;2100|30,An ancient altar for storing and loading memmories.,20

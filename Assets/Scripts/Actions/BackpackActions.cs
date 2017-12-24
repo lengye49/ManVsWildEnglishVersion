@@ -38,27 +38,27 @@ public class BackpackActions : MonoBehaviour {
         Renown.text = r.ToString();
         if (r < 50)
         {
-            RenownName.text = "籍籍无名";
+            RenownName.text = "Farmer";
             RenownName.color = GameConfigs.MatColor[0];
         }
         else if (r < 200)
         {
-            RenownName.text = "小有名气";
+            RenownName.text = "Guard";
             RenownName.color = GameConfigs.MatColor[1];
         }
         else if (r < 400)
         {
-            RenownName.text = "声名远扬";
+            RenownName.text = "Leader";
             RenownName.color = GameConfigs.MatColor[2];
         }
         else if (r < 800)
         {
-            RenownName.text = "威名赫赫";
+            RenownName.text = "Elder";
             RenownName.color = GameConfigs.MatColor[3];
         }
         else
         {
-            RenownName.text = "威震天下";
+            RenownName.text = "Mayor";
             RenownName.color = GameConfigs.MatColor[4];
         }
     }

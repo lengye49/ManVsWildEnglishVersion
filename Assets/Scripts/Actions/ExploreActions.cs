@@ -118,11 +118,9 @@ public class ExploreActions : MonoBehaviour {
 
 		_panelManager.MapGoing = mapGoing;
 		if (mapGoing.id == 0) {
-			_logManager.AddLog ("回到家中。");
-		}else if(mapGoing.id == 24){
-			_logManager.AddLog ("你准备妥当，开始拓荒。");
+			_logManager.AddLog ("Get home.");
 		} else
-			_logManager.AddLog ("你抵达了" + mapGoing.name + "。");
+			_logManager.AddLog ("You get to " + mapGoing.name + ".");
 		_panelManager.GoToPanel ("Place");
 
         //检测是否有新信息
@@ -132,11 +130,11 @@ public class ExploreActions : MonoBehaviour {
 	string GetTimeFormat(int m){
 		string s = "";
 		if (m < 60)
-			s = m + "分";
+			s = m + "min";
 		else if (m % 60 == 0)
-			s = (int)(m / 60) + "时";
+			s = (int)(m / 60) + "h";
 		else
-			s = (int)(m / 60) + "时" + (m % 60) + "分";
+			s = (int)(m / 60) + "h" + (m % 60) + "min";
 
 		return s;
 	}

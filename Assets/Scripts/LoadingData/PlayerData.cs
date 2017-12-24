@@ -110,35 +110,35 @@ public class PlayerData  {
 
 	public static string GetPropName(int propId){
 		switch (propId) {
-		case 0: return "生命";
-		case 1: return "生命上限";
-		case 2: return "精神";
-		case 3: return "精神上限";
-		case 4: return "食物";
-		case 5: return "食物上限";
-		case 6: return "水";
-		case 7: return "水上限";
-		case 8: return "体力";
-		case 9: return "体力上限";
-		case 10: return "温度";
-		case 11: return "温度下限";
-		case 12: return "温度上限";
-		case 13: return "近战伤害";
-		case 14: return "远程伤害";
-		case 15: return "防御";
-		case 16: return "近战命中";
-		case 17: return "远程命中";
-		case 18: return "闪避";
-		case 19: return "近战攻击距离";
-		case 20: return "远程攻击距离";
-		case 21: return "近战攻击间隔";
-		case 22: return "远程攻击间隔";
-		case 23: return "速度";
-		case 24: return "魔法伤害";
-		case 25: return "近战伤害";//比例
-		case 26: return "远程伤害";//比例
-		case 27: return "近战攻速";//比例
-		case 28: return "远程攻速";//比例
+		case 0: return "Hp";
+		case 1: return "Max Hp";
+		case 2: return "Spirit";
+		case 3: return "Max Spirit";
+		case 4: return "Food";
+		case 5: return "Max Food";
+		case 6: return "Water";
+		case 7: return "Max Water";
+		case 8: return "Energy";
+		case 9: return "Max Energy";
+		case 10: return "Temp.";
+		case 11: return "Min Temp.";
+		case 12: return "Max Temp.";
+		case 13: return "Melee Dam.";
+		case 14: return "Ranged Dam.";
+		case 15: return "Def.";
+		case 16: return "Melee Hit";
+		case 17: return "Ranged Hit";
+		case 18: return "Dodge";
+		case 19: return "Melee Distance";
+		case 20: return "Ranged Distance";
+		case 21: return "Melee CD";
+		case 22: return "Ranged CD";
+		case 23: return "Move Speed";
+		case 24: return "Magic Dam.";
+		case 25: return "Melee Dam. Rate";//比例
+		case 26: return "Ranged Dam. Rate";//比例
+		case 27: return "Melee CD Rate";//比例
+		case 28: return "Ranged CD Rate";//比例
 		default:
 			return "Wrong Prop Id = " + propId;
 		}

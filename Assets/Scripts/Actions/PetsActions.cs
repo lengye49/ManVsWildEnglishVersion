@@ -54,7 +54,7 @@ public class PetsActions : MonoBehaviour {
 			Monster m = LoadTxt.GetMonster (GameData._playerData.Pets [key].monsterId);
 			usedSpace += m.canCapture;
 		}
-		spaceText.text = "空间(" + usedSpace + "/" + petSpace + ")";
+		spaceText.text = "Space(" + usedSpace + "/" + petSpace + ")";
 
 		if (openPetCell > petCells.Count) {
 			for (int i = petCells.Count; i < openPetCell; i++) {
@@ -92,16 +92,16 @@ public class PetsActions : MonoBehaviour {
 		t [0].text = m.name;
 		switch (p.state) {
 		case 0:
-			t [1].text = "放养";
+			t [1].text = "Free Range";
 			break;
 		case 1:
-			t [1].text = "骑乘";
+			t [1].text = "Riding";
 			break;
 		case 2:
-			t [1].text = "巡逻";
+			t [1].text = "Patrolling";
 			break;
 		default:
-			t [1].text = "放养";
+			t [1].text = "Free Range";
 			break;
 		}
 		t[2].text = m.canCapture.ToString();
@@ -121,17 +121,17 @@ public class PetsActions : MonoBehaviour {
 		Text[] t = Detail.gameObject.GetComponentsInChildren<Text> ();
 		Monster m = LoadTxt.GetMonster (_localPet.monsterId);
 		t [0].text = _localPet.name;
-		t [1].text = "描述";
+		t [1].text = "Desc.";
 
 		switch (_localPet.state) {
 		case 0:
-			t [2].text = "放养";
+			t [2].text = "Free Range";
 			break;
 		case 1:
-			t [2].text = "骑乘";
+			t [2].text = "Ride";
 			break;
 		case 2:
-			t [2].text = "巡逻";
+			t [2].text = "Patrolling";
 			break;
 		default:
 			break;
@@ -162,9 +162,9 @@ public class PetsActions : MonoBehaviour {
 		_localPet.state = (_localPet.state == 2) ? 0 : 2;
 
 		if (_localPet.state == 2)
-			_logManager.AddLog (_localPet.name + "开始守卫领地。");
+			_logManager.AddLog (_localPet.name + " started to patrol.");
 		else
-			_logManager.AddLog (_localPet.name + "停止守卫领地。");
+			_logManager.AddLog (_localPet.name + " stopped patrolling");
 
 		foreach (int key in GameData._playerData.Pets.Keys) {
 			Debug.Log ("Key = " + key + ", State = "+GameData._playerData.Pets[key].state);
@@ -181,7 +181,7 @@ public class PetsActions : MonoBehaviour {
 		if (_localPet.state == 1) {
 			RemoveMount ();
 			_localPet.state = 0;
-			s += "停止骑乘" + _localPet.name+"。";
+			s += "Stop riding" + _localPet.name+".";
 		} else {
             foreach (int key in GameData._playerData.Pets.Keys)
             {
@@ -194,15 +194,15 @@ public class PetsActions : MonoBehaviour {
             _gameData.StoreData ("Mount", _gameData.GetStrFromMount (GameData._playerData.Mount));
             _gameData.UpdateProperty ();
 
-			s += "开始骑乘" + _localPet.name+"。";
+			s += "Start to ride " + _localPet.name+".";
 			//Achievement
 			this.gameObject.GetComponentInParent<AchieveActions> ().MountPet (_localPet.monsterId);
 		}
 		float speed2 = GameData._playerData.property [23];
 		if (speed1 > speed2) {
-			s += "速度 -" + (speed1 - speed2) + "。";
+			s += "Move speed -" + (speed1 - speed2) + ".";
 		}else if(speed1<speed2){
-			s += "速度 +" + (speed2 - speed1) + "。";
+			s += "Move speed +" + (speed2 - speed1) + ".";
 		}
 		_logManager.AddLog (s);
 
@@ -218,7 +218,7 @@ public class PetsActions : MonoBehaviour {
 		}
 
 		GameData._playerData.Pets.Remove (_localIndex);
-		_logManager.AddLog (_localPet.name + "离开了你。");
+		_logManager.AddLog (_localPet.name + " left you.");
 		StorePetState ();
 		CallOutDetail ();
 		SetPetCells();
@@ -228,7 +228,7 @@ public class PetsActions : MonoBehaviour {
 		if (_localPet.state == 1) {
 			RemoveMount ();
 		}
-		string s = "你屠宰了" + _localPet.name + "。";
+		string s = "You slaughtered " + _localPet.name + ".";
 		Monster m = LoadTxt.GetMonster(_localPet.monsterId);
 		Dictionary<int,int> r = Algorithms.GetReward (m.drop);
 		if (r.Count > 0) {
@@ -236,7 +236,7 @@ public class PetsActions : MonoBehaviour {
 				_gameData.AddItem (key * 10000, r [key]);
 				s += LoadTxt.MatDic [key].name + " ×" + r [key] + ",";
 			}
-			s = s.Substring (0, s.Length - 1) + "。";
+			s = s.Substring (0, s.Length - 1) + ".";
 		}
 		_logManager.AddLog (s);
 

@@ -190,7 +190,7 @@ public class PlaceActions : MonoBehaviour {
 	}
 
 	void InitializeDungeon(){
-        dungeonLevelText.text = "失落之地 - " + dungeonLevel + "/100层";
+        dungeonLevelText.text = "Dungeon - " + dungeonLevel + "/100";
 
 		dungeonRect.localPosition = Vector3.zero;
 		placeRect.localPosition = new Vector3 (-10000, 0, 0);
@@ -292,7 +292,6 @@ public class PlaceActions : MonoBehaviour {
                 CallInComplete(1);
                 _gameData.CloseMap(25);
                 _gameData.OpenMap(26);
-                _logManager.AddLog("通关模式已开启！");
             }
         }
 	}
@@ -351,7 +350,7 @@ public class PlaceActions : MonoBehaviour {
 			_gameData.AddItem (matId * 10000, num);
             string s = LoadTxt.MatDic[matId].name + "+" + num;
 //            _logManager.AddLog("你捡到了" + s + "。");
-			_floating.CallInFloating ("你捡到了" + s + "。", 0);
+			_floating.CallInFloating ("You picked up a " + s + ".", 0);
 
 		} else if (r < 25) {
 			int r1 = Algorithms.GetIndexByRange (1, 3);
@@ -375,14 +374,14 @@ public class PlaceActions : MonoBehaviour {
                 r3 = Algorithms.GetIndexByRange(3, 6);
                 _gameData.ChangeProperty(0, r3);
 //                _logManager.AddLog("你捡到一块绷带，生命+" + r3);
-				_floating.CallInFloating ("你捡到一块绷带，生命+" + r3, 0);
+				_floating.CallInFloating ("You found a bandage, Hp+" + r3, 0);
             }
             else if (r2 < 8)
             {
                 r3 = Algorithms.GetIndexByRange(10, 20);
                 _gameData.ChangeProperty(0, r3);
 //                _logManager.AddLog("一只猴子朝你扔了六个核桃，生命+" + r3);
-				_floating.CallInFloating ("一只猴子朝你扔了六个核桃，生命+" + r3, 0);
+				_floating.CallInFloating ("A monkey give you a peach, Hp+" + r3, 0);
 
             }
             else if (r2 < 10)
@@ -390,7 +389,7 @@ public class PlaceActions : MonoBehaviour {
                 r3 = Algorithms.GetIndexByRange(20, 60);
                 _gameData.ChangeProperty(0, r3);
 //                _logManager.AddLog("一阵愉悦而纯净的力量扑面而来，生命+" + r3);
-				_floating.CallInFloating("一阵愉悦而纯净的力量扑面而来，生命+" + r3,0);
+				_floating.CallInFloating("You are healed by life spring, Hp+" + r3,0);
             }
 
             //******************************************扣血**********
@@ -399,20 +398,20 @@ public class PlaceActions : MonoBehaviour {
                 r3 = -Algorithms.GetIndexByRange(1, 5);
                 _gameData.ChangeProperty(0, r3);
 //                _logManager.AddLog("不小心踩到了陷阱，生命" + r3);
-				_floating.CallInFloating("不小心踩到了陷阱，生命" + r3,1);
+				_floating.CallInFloating("You fell on a trap, Hp" + r3,1);
             }
             else if (r2 < 18)
             {
                 r3 = -Algorithms.GetIndexByRange(3, 7);
                 _gameData.ChangeProperty(0, r3);
 //                _logManager.AddLog("打开宝箱，一股腐败气息铺面而来，生命" + r3 );
-				_floating.CallInFloating("打开宝箱，一股腐败气息铺面而来，生命" + r3,1);
+				_floating.CallInFloating("There is a snake in a treasure box, Hp" + r3,1);
             }
             else if (r2 < 20) {
                 r3 = -Algorithms.GetIndexByRange (4, 8);
                 _gameData.ChangeProperty (0, r3);
 //                _logManager.AddLog("你遭到莫名的袭击，生命" + r3);
-				_floating.CallInFloating("你遭到莫名的袭击，生命" + r3,1);
+				_floating.CallInFloating("You are raided, Hp" + r3,1);
             }  
 
             //******************************************恢复精神**********
@@ -420,19 +419,19 @@ public class PlaceActions : MonoBehaviour {
 				r3 = Algorithms.GetIndexByRange (2, 6);
 				_gameData.ChangeProperty (2, r3);
 //                _logManager.AddLog("一个友善的精灵朝你使用精神之泉，精神+" + r3 );
-				_floating.CallInFloating("一个友善的精灵朝你使用精神之泉，精神+" + r3 ,0);
+				_floating.CallInFloating("An elf smiles at you, Spirit+" + r3 ,0);
             }
             else if (r2 < 28) {
                 r3 = Algorithms.GetIndexByRange (5, 10);
                 _gameData.ChangeProperty (2, r3);
 //                _logManager.AddLog("你被远古战士雕像激励，精神+" + r3 );
-				_floating.CallInFloating("你被远古战士雕像激励，精神+" + r3 ,0);
+				_floating.CallInFloating("You are encouraged by warrior's statue, Spirit +" + r3 ,0);
             }  
             else if (r2 < 30) {
                 r3 = Algorithms.GetIndexByRange (10, 30);
                 _gameData.ChangeProperty (2, r3);
 //                _logManager.AddLog("你找到了精神之泉，精神+" + r3 );
-				_floating.CallInFloating("你找到了精神之泉，精神+" + r3,0);
+				_floating.CallInFloating("You find a spirit spring, Spirit+" + r3,0);
             } 
 
             //******************************************扣除精神**********
@@ -440,13 +439,13 @@ public class PlaceActions : MonoBehaviour {
 				r3 = -Algorithms.GetIndexByRange (1, 4);
 				_gameData.ChangeProperty (2, r3);
 //				_logManager.AddLog("你感到一阵头晕目眩，精神" + r3 );
-				_floating.CallInFloating ("你感到一阵头晕目眩，精神" + r3, 1);
+				_floating.CallInFloating ("You feel dizzy, Spirit " + r3, 1);
 			}
 			else if (r2 < 40) {
 				r3 = -Algorithms.GetIndexByRange (3, 6);
 				_gameData.ChangeProperty (2, r3);
 //				_logManager.AddLog("你受到恶魔雕像的惊吓，精神" + r3 );
-				_floating.CallInFloating("你受到恶魔雕像的惊吓，精神" + r3,1);
+				_floating.CallInFloating("You are frightened by devil statue, Spirit" + r3,1);
 			}
 
 			//******************************************恢复食物**********
@@ -454,13 +453,13 @@ public class PlaceActions : MonoBehaviour {
 				r3 = Algorithms.GetIndexByRange (2, 6);
 				_gameData.ChangeProperty (4, r3);
 //				_logManager.AddLog("你捡到了一片干硬的面包，食物+" + r3 );
-				_floating.CallInFloating("你捡到了一片干硬的面包，食物+" + r3 ,0);
+				_floating.CallInFloating("You found a bread, Food +" + r3 ,0);
 			} 
 			else if (r2 < 50) {
 				r3 = Algorithms.GetIndexByRange (5, 10);
 				_gameData.ChangeProperty (4, r3);
 //				_logManager.AddLog("好心的探险者分给你一些肉干，食物+" + r3 );
-				_floating.CallInFloating("好心的探险者分给你一些肉干，食物+" + r3 ,0);
+				_floating.CallInFloating("An explorer gave you some food, Food +" + r3 ,0);
 			} 
 
 			//******************************************恢复水分**********
@@ -468,19 +467,19 @@ public class PlaceActions : MonoBehaviour {
 				r3 = Algorithms.GetIndexByRange (2, 6);
 				_gameData.ChangeProperty (6, r3);
 //				_logManager.AddLog("捡到一个破旧的水囊，水+" + r3 );
-				_floating.CallInFloating("捡到一个破旧的水囊，水+" + r3,0);
+				_floating.CallInFloating("You found an old water bag, Water +" + r3,0);
 			} 
 			else if (r2 < 58) {
 				r3 = Algorithms.GetIndexByRange (5, 10);
 				_gameData.ChangeProperty (6, r3);
 //				_logManager.AddLog("好心的探险者分给你一些水，水+" + r3 );
-				_floating.CallInFloating("好心的探险者分给你一些水，水+" + r3,0);
+				_floating.CallInFloating("An explorer gave you some water, Water +" + r3,0);
 			}
 			else if (r2 < 60) {
 				r3 = Algorithms.GetIndexByRange (10, 25);
 				_gameData.ChangeProperty (6, r3);
 //				_logManager.AddLog("遇到一个地下泉眼，水+" + r3 );
-				_floating.CallInFloating ("遇到一个地下泉眼，水+" + r3, 0);
+				_floating.CallInFloating ("You meet with a stream, Water +" + r3, 0);
 			}
 
 			//******************************************改变体温**********
@@ -488,39 +487,39 @@ public class PlaceActions : MonoBehaviour {
 				r3 = Algorithms.GetIndexByRange (1, 3);
 				_gameData.ChangeProperty (10, r3);
 //				_logManager.AddLog("趟过一个温泉，温度+" + r3 );
-				_floating.CallInFloating ("趟过一个温泉，温度+" + r3, 0);
+				_floating.CallInFloating ("You fell into a hot spring, Temp. +" + r3, 0);
 			} 
 			else if (r2 < 70) {
 				r3 = Algorithms.GetIndexByRange (2, 5);
 				_gameData.ChangeProperty (10, r3);
 				_gameData.ChangeProperty(0, -r3);
 //				_logManager.AddLog("地面突然冒出一团岩浆，温度+" + r3 + " ,生命-" + r3);
-				_floating.CallInFloating ("地面突然冒出一团岩浆，温度+" + r3 + " ,生命-" + r3, 1);
+				_floating.CallInFloating ("Some magma popped out of the ground, Temp. +" + r3 + " , Hp -" + r3, 1);
 			} 
 			else if (r2 < 75) {
 				r3 = -Algorithms.GetIndexByRange (1, 4);
 				_gameData.ChangeProperty (10, r3);
 //				_logManager.AddLog("路过冰面，摔了一跤，温度" + r3 );
-				_floating.CallInFloating ("路过冰面，摔了一跤，温度" + r3, 1);
+				_floating.CallInFloating ("You fell into a ice water, Temp." + r3, 1);
 			} 
 			else if (r2 < 80) {
 				r3 = -Algorithms.GetIndexByRange (1, 4);
 				_gameData.ChangeProperty (10, r3);
 				_gameData.ChangeProperty(2, r3);
 //				_logManager.AddLog("一阵刺骨的阴风吹过，温度" + r3 + " ,精神" + r3 );
-				_floating.CallInFloating("一阵刺骨的阴风吹过，温度" + r3 + " ,精神" + r3,1);
+				_floating.CallInFloating("Cold wind blows, Temp. " + r3 + " , Spirit " + r3,1);
 			} 
 
 			//******************************************特殊回复**********
 			else if (r2 < 82) {
 				_gameData.ChangeProperty (0, 999);
 //				_logManager.AddLog("受到生命的祝福，生命回满。");
-				_floating.CallInFloating ("受到生命的祝福，生命回满。", 0);
+				_floating.CallInFloating ("Blessed by Life Goddess, recover all hp.", 0);
 			} 
 			else if (r2 < 84) {
 				_gameData.ChangeProperty (2, 999);
 //				_logManager.AddLog("受到生命的祝福，精神回满。");
-				_floating.CallInFloating ("受到生命的祝福，精神回满。", 0);
+				_floating.CallInFloating ("Blessed by Spirit Goddess, recover all spirit.", 0);
 			}
 		} 
 	}
@@ -609,7 +608,7 @@ public class PlaceActions : MonoBehaviour {
     //******************************************隧道地图*******************************************
 
     void InitializeTunnel(){
-        dungeonLevelText.text = "时空隧道 - " + tunnelLevel + "/10层";
+        dungeonLevelText.text = "Space Vortex - " + tunnelLevel + "/10";
 
         dungeonRect.localPosition = Vector3.zero;
         placeRect.localPosition = new Vector3 (-10000, 0, 0);
@@ -663,21 +662,21 @@ public class PlaceActions : MonoBehaviour {
                 r3 = Algorithms.GetIndexByRange(3, 6);
                 _gameData.ChangeProperty(0, r3);
 //                _logManager.AddLog("你捡到一块绷带，生命+" + r3);
-				_floating.CallInFloating ("你捡到一块绷带，生命+" + r3, 0);
+				_floating.CallInFloating ("You found a bandage, Hp+" + r3, 0);
             }
             else if (r2 < 5)
             {
                 r3 = Algorithms.GetIndexByRange(10, 30);
                 _gameData.ChangeProperty(0, r3);
 //                _logManager.AddLog("恢复之光照耀着你，生命+" + r3);
-				_floating.CallInFloating("恢复之光照耀着你，生命+" + r3,0);
+				_floating.CallInFloating("A monkey give you a peach, Hp+" + r3,0);
             }
             else if (r2 < 10)
             {
                 r3 = Algorithms.GetIndexByRange(20, 60);
                 _gameData.ChangeProperty(0, r3);
 //                _logManager.AddLog("一阵愉悦而纯净的力量扑面而来，生命+" + r3);
-				_floating.CallInFloating("一阵愉悦而纯净的力量扑面而来，生命+" + r3,0);
+				_floating.CallInFloating("You are healed by life spring, Hp+" + r3,0);
             }
 
             //******************************************回血**********
@@ -686,25 +685,25 @@ public class PlaceActions : MonoBehaviour {
                 r3 = -Algorithms.GetIndexByRange(1, 5);
                 _gameData.ChangeProperty(0, r3);
 //                _logManager.AddLog("不小心踩到了陷阱，生命" + r3);
-				_floating.CallInFloating("不小心踩到了陷阱，生命" + r3,1);
+				_floating.CallInFloating("You fell on a trap, Hp" + r3,1);
             }
             else if (r2 < 20) {
                 r3 = -Algorithms.GetIndexByRange (4, 8);
                 _gameData.ChangeProperty (0, r3);
 //                _logManager.AddLog("你碰到了时空裂缝，生命" + r3);
-				_floating.CallInFloating ("你碰到了时空裂缝，生命" + r3, 1);
+				_floating.CallInFloating ("You met with a space rift, Hp" + r3, 1);
             }  
             else if (r2 < 24) {
                 r3 = Algorithms.GetIndexByRange (5, 10);
                 _gameData.ChangeProperty (2, r3);
 //                _logManager.AddLog("你被远古战士雕像激励，精神+" + r3 );
-				_floating.CallInFloating ("你被远古战士雕像激励，精神+" + r3, 0);
+				_floating.CallInFloating ("You are encouraged by warrior's statue, Spirit +" + r3, 0);
             }  
             else if (r2 < 30) {
                 r3 = Algorithms.GetIndexByRange (10, 30);
                 _gameData.ChangeProperty (2, r3);
 //                _logManager.AddLog("你找到了精神之泉，精神+" + r3 );
-				_floating.CallInFloating("你找到了精神之泉，精神+" + r3,0);
+				_floating.CallInFloating("You find a spirit spring, Spirit+" + r3,0);
             } 
 
             //******************************************扣除精神**********
@@ -712,20 +711,20 @@ public class PlaceActions : MonoBehaviour {
                 r3 = -Algorithms.GetIndexByRange (1, 4);
                 _gameData.ChangeProperty (2, r3);
 //                _logManager.AddLog("你感到一阵头晕目眩，精神" + r3 );
-				_floating.CallInFloating ("你感到一阵头晕目眩，精神" + r3, 1);
+				_floating.CallInFloating ("You feel dizzy, Spirit " + r3, 1);
             }
             //******************************************恢复食物**********
             else if (r2 < 43) {
                 r3 = Algorithms.GetIndexByRange (2, 6);
                 _gameData.ChangeProperty (4, r3);
 //                _logManager.AddLog("你捡到了一片干硬的面包，食物+" + r3 );
-				_floating.CallInFloating ("你捡到了一片干硬的面包，食物+" + r3, 0);
+				_floating.CallInFloating ("You found a bread, Food +" + r3, 0);
             } 
             else if (r2 < 50) {
                 r3 = Algorithms.GetIndexByRange (5, 10);
                 _gameData.ChangeProperty (4, r3);
 //                _logManager.AddLog("好心的时空旅者分给你一些肉干，食物+" + r3 );
-				_floating.CallInFloating ("好心的时空旅者分给你一些肉干，食物+" + r3, 0);
+				_floating.CallInFloating ("An explorer gave you some food, Food +" + r3, 0);
             } 
 
             //******************************************恢复水分**********
@@ -733,13 +732,13 @@ public class PlaceActions : MonoBehaviour {
                 r3 = Algorithms.GetIndexByRange (2, 6);
                 _gameData.ChangeProperty (6, r3);
 //                _logManager.AddLog("捡到一个破旧的水囊，水+" + r3 );
-				_floating.CallInFloating("捡到一个破旧的水囊，水+" + r3 ,0);
+				_floating.CallInFloating("You found an old water bag, Water " + r3 ,0);
             } 
             else if (r2 < 60) {
                 r3 = Algorithms.GetIndexByRange (5, 10);
                 _gameData.ChangeProperty (6, r3);
 //                _logManager.AddLog("好心的时空旅者分给你一些水，水+" + r3 );
-				_floating.CallInFloating("好心的时空旅者分给你一些水，水+" + r3,0 );
+				_floating.CallInFloating("An explorer gave you some water, Water +" + r3,0 );
             }
             //******************************************改变体温**********
             else if (r2 < 70) {
@@ -747,26 +746,26 @@ public class PlaceActions : MonoBehaviour {
                 _gameData.ChangeProperty (10, r3);
                 _gameData.ChangeProperty(0, -r3);
 //                _logManager.AddLog("地面突然冒出一团热量，温度+" + r3 + " ,生命-" + r3);
-				_floating.CallInFloating("地面突然冒出一团热量，温度+" + r3 + " ,生命-" + r3,1);
+				_floating.CallInFloating("Some magma popped out of the ground, Temp. +" + r3 + " , Hp -" + r3,1);
             } 
             else if (r2 < 80) {
                 r3 = -Algorithms.GetIndexByRange (1, 4);
                 _gameData.ChangeProperty (10, r3);
                 _gameData.ChangeProperty(2, r3);
 //                _logManager.AddLog("一阵刺骨的阴风吹过，温度" + r3 + " ,精神" + r3 );
-				_floating.CallInFloating ("一阵刺骨的阴风吹过，温度" + r3 + " ,精神" + r3, 1);
+				_floating.CallInFloating ("Cold wind blows, Temp. " + r3 + " , Spirit " + r3, 1);
             } 
 
             //******************************************特殊回复**********
             else if (r2 < 85) {
                 _gameData.ChangeProperty (0, 999);
 //                _logManager.AddLog("受到生命的祝福，生命回满。");
-				_floating.CallInFloating("受到生命的祝福，生命回满。",0);
+				_floating.CallInFloating("Blessed by Life Goddess, recover all hp.",0);
             } 
             else if (r2 < 90) {
                 _gameData.ChangeProperty (2, 999);
 //                _logManager.AddLog("受到精神的祝福，精神回满。");
-				_floating.CallInFloating("受到精神的祝福，精神回满。",0);
+				_floating.CallInFloating("Spirit Goddess blessed you, recover all spirit.",0);
             }else {
                 Debug.Log ("Nothing Happened");
             }
@@ -837,25 +836,25 @@ public class PlaceActions : MonoBehaviour {
 		t [2].text = "";
 		switch (pu.actionType) {
 		case 0:
-			t [3].text ="伐木";
+			t [3].text ="Cut";
 			break;
 		case 1:
-			t [3].text ="挖掘";
+			t [3].text ="Dig";
 			break;
 		case 2:
-			t [3].text ="提水";
+			t [3].text ="Fetch";
 			break;
 		case 3:
-			t [3].text = "探索";
+			t [3].text = "Search";
 			break;
 		case 4:
-			t [3].text = "收获";
+			t [3].text = "Collect";
 			break;
 		case 5:
-			t [3].text = "出发";
+			t [3].text = "Go";
 			break;
 		case 6:
-			t [3].text = "交谈";
+			t [3].text = "Talk";
 			break;
 		default:
 			t [3].text = "";
@@ -984,14 +983,14 @@ public class PlaceActions : MonoBehaviour {
 		Text[] t = resourceDetail.gameObject.GetComponentsInChildren<Text> ();
 		t [0].text = _puNow.name;
 		t [1].text = "";
-		t [2].text = "增速: " + GameConfigs.TreeGrowSpeed + " /天" + "\n剩余: " + ((int)nowTrees).ToString ();
-		t [3].text = "可能获得:";
+		t [2].text = "Grow: " + GameConfigs.TreeGrowSpeed + " /day" + "\nLeft: " + ((int)nowTrees).ToString ();
+		t [3].text = "Get:";
 		t [4].text = ac;
-		t [5].text = "耗时: "+GameConfigs.CuttingTime + "分";
-		t [6].text = "消耗:"+ GameConfigs.CuttingStrength + "体力";
+		t [5].text = "Time: "+GameConfigs.CuttingTime + "min";
+		t [6].text = "Cost:"+ GameConfigs.CuttingStrength + " Energy";
 
 		Button[] b = resourceDetail.gameObject.GetComponentsInChildren<Button> ();
-		b [0].gameObject.GetComponentInChildren<Text> ().text = "伐木";
+		b [0].gameObject.GetComponentInChildren<Text> ().text = "Cut";
 		b [0].interactable = (nowTrees >= 1);
 	}
 
@@ -1011,14 +1010,14 @@ public class PlaceActions : MonoBehaviour {
 		Text[] t = resourceDetail.gameObject.GetComponentsInChildren<Text> ();
 		t [0].text = pu.name;
 		t [1].text = "";
-		t [2].text = "剩余:" + now.ToString()+"/"+total.ToString ();
-		t [3].text = "可能获得:";
-		t [4].text = "石料,各类矿产";
-		t [5].text = "耗时: "+GameConfigs.DiggingTime + "分";
-		t [6].text = "消耗: " + GameConfigs.DiggingStrength + " 体力";
+		t [2].text = "Left:" + now.ToString()+"/"+total.ToString ();
+		t [3].text = "Get:";
+		t [4].text = "Stone,Mines";
+		t [5].text = "Time: "+GameConfigs.DiggingTime + "min";
+		t [6].text = "Cost: " + GameConfigs.DiggingStrength + " Energy";
 
 		Button b = resourceDetail.gameObject.GetComponentInChildren<Button> ();
-		b.gameObject.GetComponentInChildren<Text> ().text = "挖掘";
+		b.gameObject.GetComponentInChildren<Text> ().text = "Dig";
 		b.interactable = (now > 0);
 	}
 
@@ -1037,13 +1036,13 @@ public class PlaceActions : MonoBehaviour {
 		t [0].text = pu.name;
 		t [1].text = "";
 		t [2].text = "";
-		t [3].text = "可能获得:";
+		t [3].text = "Get:";
 		t [4].text = ac;
-		t [5].text = "耗时: "+GameConfigs.FetchingTime + "分";
-		t [6].text = "消耗: " + GameConfigs.FetchingStrength + " 体力";
+		t [5].text = "Time: "+GameConfigs.FetchingTime + "min";
+		t [6].text = "Cost: " + GameConfigs.FetchingStrength + " Energy";
 
 		Button b = resourceDetail.gameObject.GetComponentInChildren<Button> ();
-		b.gameObject.GetComponentInChildren<Text> ().text = "提水";
+		b.gameObject.GetComponentInChildren<Text> ().text = "Fetch";
 		b.interactable = true;
 	}
 
@@ -1058,13 +1057,13 @@ public class PlaceActions : MonoBehaviour {
 		t[0].text = pu.name;
 		t [1].text = "";
 		t [2].text = "";
-		t [3].text = "探索进度:";
+		t [3].text = "Progress:";
 		t [4].text = (100 - (int)(now * 100 / total)) + "%";
-		t [5].text = "耗时: "+GameConfigs.SearchTime + "分";
+		t [5].text = "Time: "+GameConfigs.SearchTime + "min";
 		t [6].text = "";
 
 		Button b = resourceDetail.gameObject.GetComponentInChildren<Button> ();
-		b.gameObject.GetComponentInChildren<Text>().text = "探索";
+		b.gameObject.GetComponentInChildren<Text>().text = "Search";
 		b.interactable = (now > 0);
 	}
 
@@ -1083,13 +1082,13 @@ public class PlaceActions : MonoBehaviour {
 		t[0].text = pu.name;
 		t [1].text = "";
 		t [2].text = "";
-		t [3].text = "可能获得:";
+		t [3].text = "Get:";
 		t [4].text = ac;
-		t [5].text = "耗时: "+GameConfigs.CollectTime + "分";
-		t [6].text = "消耗: " + GameConfigs.CollectStrength + " 体力";
+		t [5].text = "Time: "+GameConfigs.CollectTime + "min";
+		t [6].text = "Cost: " + GameConfigs.CollectStrength + " Energy";
 
 		Button b = resourceDetail.gameObject.GetComponentInChildren<Button> ();
-		b.gameObject.GetComponentInChildren<Text>().text = "收获";
+		b.gameObject.GetComponentInChildren<Text>().text = "Collect";
 		b.interactable = true;
 
 	}
@@ -1101,13 +1100,13 @@ public class PlaceActions : MonoBehaviour {
 		t[0].text = pu.name;
 		t [1].text = "";
 		t [2].text = "";
-		t [3].text = "猎物:";
-		t [4].text = "各类野兽";
-		t [5].text = "耗时: "+GameConfigs.HuntTime + "分";
+		t [3].text = "Prey:";
+		t [4].text = "All kinds of monsters.";
+		t [5].text = "Time: "+GameConfigs.HuntTime + "min";
 		t [6].text = "";
 
 		Button b = resourceDetail.gameObject.GetComponentInChildren<Button> ();
-		b.gameObject.GetComponentInChildren<Text>().text = "捕猎";
+		b.gameObject.GetComponentInChildren<Text>().text = "Hunt";
 		b.interactable = true;
 	}
 
@@ -1140,38 +1139,38 @@ public class PlaceActions : MonoBehaviour {
 
 		string t = resourceDetail.GetComponentInChildren<Button> ().gameObject.GetComponentInChildren<Text> ().text;
 		switch (t) {
-		case "伐木":
+		case "Cut":
 			if (GameData._playerData.strengthNow < GameConfigs.CuttingStrength) {
-				_floating.CallInFloating ("体力不足", 1);
+				_floating.CallInFloating ("Insufficient Energy!", 1);
 				break;
 			}
 			StartCoroutine (StartCut ());
 			break;
-		case "挖掘":
+		case "Dig":
 			if (GameData._playerData.strengthNow < GameConfigs.DiggingStrength) {
-				_floating.CallInFloating ("体力不足", 1);
+				_floating.CallInFloating ("Insufficient Energy!", 1);
 				return;
 			}
 			StartCoroutine (StartDig ());
 			break;
-		case "提水":
+		case "Fetch":
 			if (GameData._playerData.strengthNow < GameConfigs.FetchingStrength) {
-				_floating.CallInFloating ("体力不足", 1);
+				_floating.CallInFloating ("Insufficient Energy!", 1);
 				return;
 			}
 			StartCoroutine (StartFetch ());
 			break;
-		case "收获":
+		case "Collect":
 			if (GameData._playerData.strengthNow < GameConfigs.FetchingStrength) {
-				_floating.CallInFloating ("体力不足", 1);
+				_floating.CallInFloating ("Insufficient Energy!", 1);
 				return;
 			}
 			StartCoroutine (StartFetch ());
 			break;
-		case "探索":
+		case "Search":
 			StartCoroutine (StartSearch ());
 			break;
-		case "捕猎":
+		case "Hunt":
 			Hunt ();
 			break;
 		default:
@@ -1373,7 +1372,7 @@ public class PlaceActions : MonoBehaviour {
 		}
 
 		if (rewards.Count >= 1) {
-			string newItems = "获得 ";
+			string newItems = "";
 			foreach (int key in rewards.Keys) {
 
                 //容错
@@ -1384,10 +1383,10 @@ public class PlaceActions : MonoBehaviour {
 				newItems += LoadTxt.MatDic [key].name + " +" + rewards [key] + "\t";
 			}
 			newItems = newItems.Substring (0, newItems.Length - 1);
-			if (newItems != "获得")
+			if (newItems != "")
 				_floating.CallInFloating (newItems, 0);
 			else
-				_floating.CallInFloating ("一无所获。", 0);
+				_floating.CallInFloating ("You found nothing.", 0);
 
 			//Achievement
 			if (now == 0)

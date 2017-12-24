@@ -58,13 +58,13 @@ public class StartGameLoading : MonoBehaviour {
 		fillImage.color = new Color (0, Mathf.Max (0, (value + 0.5f) / 1f), 0f, 1f);
 
 		if ((int)(v * 10) % 4 == 0) {
-			loadingTxt.text = "加载中";
+			loadingTxt.text = "Loading";
 		}else if((int)(v * 10) % 4 == 1){
-			loadingTxt.text = "加载中.";
+			loadingTxt.text = "Loading.";
 		}else if((int)(v * 10) % 4 == 2){
-			loadingTxt.text = "加载中..";
+			loadingTxt.text = "Loading..";
 		}else{
-			loadingTxt.text = "加载中...";
+			loadingTxt.text = "Loading...";
 		}
 		loadingPercent.text = value + "%";
 	}

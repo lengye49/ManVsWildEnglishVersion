@@ -466,7 +466,7 @@ public class PanelManager : MonoBehaviour {
 
 	void CatchThief(Thief t){
 		
-		string s = "你获得了";
+		string s = "You get ";
 		Dictionary<int,int> drop = Algorithms.GetReward (LoadTxt.GetMonster(t.monsterId).drop);
 		foreach (int key in drop.Keys) {
 			_gameData.AddItem (key * 10000, drop [key]);
@@ -475,7 +475,7 @@ public class PanelManager : MonoBehaviour {
 		}
         if (drop.Count <= 0)
             s = "";
-		_logManager.AddLog (t.name + "溜进你的家里试图盗窃，但被守卫抓住了。" + s);
+		_logManager.AddLog (t.name + " tried to steal, but was caught by your guard." + s);
 
 		//Achievement
 		this.gameObject.GetComponentInParent<AchieveActions>().CatchThief(t.id);
@@ -519,11 +519,11 @@ public class PanelManager : MonoBehaviour {
 		}
 		if (s != "") {
 			s = s.Substring (0, s.Length - 1) + "。";
-			_logManager.AddLog ("警告!" + t.name + "闯入家中。" + s);
+			_logManager.AddLog ("Warning!" + t.name + "robbed your house." + s);
 		} else {
-			_logManager.AddLog ("警告!" + t.name + "闯入家中。但空手而去。");
+			_logManager.AddLog ("Warning!" + t.name + "robbed your house, but got nothing.");
 		}
-		_logManager.AddLog ("你可以升级科技减少损失或安排宠物抵御盗贼。");
+		_logManager.AddLog ("You should upgrade techs or arrange better guards.");
 	}
 }
 

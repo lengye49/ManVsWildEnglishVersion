@@ -34,7 +34,7 @@ public class AlterActions : MonoBehaviour {
         storeButton.interactable = (num >= GameConfigs.SoulStoneForStoreMem);
 
 		bool s = GameData._playerData.HasMemmory > 0;
-		memoryPoolState.text = s ? "已存档" : "无存档";
+		memoryPoolState.text = s ? "Full" : "Empty";
 		memoryPoolState.color = s ? Color.green : Color.red;
 		recoverButton.interactable = s;
 	}
@@ -49,7 +49,7 @@ public class AlterActions : MonoBehaviour {
 		_gameData.ConsumeItemInHome(2202, GameConfigs.SoulStoneForStoreMem);
 		_gameData.StoreMemmory ();
 		UpdateAltar ();
-        _floating.CallInFloating("存档成功", 0);
+        _floating.CallInFloating("Memmory Stored!", 0);
 	}
 
 	public void RecoverMemory(){
@@ -78,11 +78,11 @@ public class AlterActions : MonoBehaviour {
 	public void Change(){
 		if (isAltar) {
 			ChangeToSacrifice ();
-			changeText.text="祭坛";
+			changeText.text="Altar";
 			isAltar = false;
 		} else {
 			ChangeToAltar ();
-			changeText.text="祭祀";
+			changeText.text="Pray";
 			isAltar = true;
 		}
 	}
@@ -120,12 +120,12 @@ public class AlterActions : MonoBehaviour {
 					j++;
 				}
 			} else {
-				ts [j].text = "无法直接使用。";
+				ts [j].text = "Can not use directly.";
 				ts [j].color = Color.white;
 				j++;
 			}
 
-			ts [4].text = "献祭(" + price + ")";
+			ts [4].text = "Pray(" + price + ")";
 			bool isEnough = _gameData.CountInHome (GameConfigs.AltarMarkId / 10000) >= price;
 			b.interactable = isEnough;
 			ts [4].color = isEnough ? Color.green : Color.gray;

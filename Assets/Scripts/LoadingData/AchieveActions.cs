@@ -196,8 +196,8 @@ public class AchieveActions : MonoBehaviour {
                 if (GameData._playerData.ghostKill >= a.req)
                 {
                     StoreAchievement(2);
-                    _floating.CallInFloating("达成新成就:" + a.name, 0);
-                    _log.AddLog("达成新成就:" + a.name, true);
+					_floating.CallInFloating("Achievement:" + a.name, 0);
+					_log.AddLog("Achievement:" + a.name, true);
                 }
             }
         }
@@ -212,8 +212,8 @@ public class AchieveActions : MonoBehaviour {
                 if (GameData._playerData.ghostBossKill >= a.req)
                 {
                     StoreAchievement(3);
-                    _floating.CallInFloating("达成新成就:" + a.name, 0);
-                    _log.AddLog("达成新成就:" + a.name, true);
+					_floating.CallInFloating("Achievement:" + a.name, 0);
+					_log.AddLog("Achievement:" + a.name, true);
                 }
             }
         }
@@ -228,8 +228,8 @@ public class AchieveActions : MonoBehaviour {
                 if (GameData._playerData.ghostKingKill >= a.req)
                 {
                     StoreAchievement(4);
-                    _floating.CallInFloating("达成新成就:" + a.name, 0);
-                    _log.AddLog("达成新成就:" + a.name, true);
+                    _floating.CallInFloating("Achievement:" + a.name, 0);
+                    _log.AddLog("Achievement:" + a.name, true);
                 }
             }
         }
@@ -244,8 +244,8 @@ public class AchieveActions : MonoBehaviour {
                 if (GameData._playerData.dragonKilled >= a.req)
                 {
                     StoreAchievement(32);
-                    _floating.CallInFloating("达成新成就:" + a.name, 0);
-                    _log.AddLog("达成新成就:" + a.name, true);
+                    _floating.CallInFloating("Achievement:" + a.name, 0);
+                    _log.AddLog("Achievement:" + a.name, true);
                 }
             }
         }
@@ -284,8 +284,8 @@ public class AchieveActions : MonoBehaviour {
             if (ReconizeCamp() >=a.req)
             {
                 StoreAchievement(39);
-                _floating.CallInFloating ("达成新成就:" + a.name, 0);
-                _log.AddLog ("达成新成就:" + a.name,true);
+                _floating.CallInFloating ("Achievement:" + a.name, 0);
+                _log.AddLog ("Achievement:" + a.name,true);
 				PlaceActions p = this.GetComponentInChildren<PlaceActions> ();
 				p.CallInComplete(2);
             }
@@ -297,8 +297,8 @@ public class AchieveActions : MonoBehaviour {
 		if (GameData._playerData.Achievements [16] == 0) {
 			if (GameData._playerData.monsterKilled >= a.req) {
 				StoreAchievement (16);
-				_floating.CallInFloating ("达成新成就:" + a.name, 0);
-				_log.AddLog ("达成新成就:" + a.name,true);
+				_floating.CallInFloating ("Achievement:" + a.name, 0);
+				_log.AddLog ("Achievement:" + a.name,true);
 			}
 		}
 	}
@@ -316,8 +316,8 @@ public class AchieveActions : MonoBehaviour {
 			a = LoadTxt.GetAchievement (22);
 			if (GameData._playerData.wineDrinked >= a.req) {
 				StoreAchievement (22);
-				_floating.CallInFloating ("达成新成就:" + a.name,0);
-				_log.AddLog ("达成新成就:" + a.name,true);
+				_floating.CallInFloating ("Achievement:" + a.name,0);
+				_log.AddLog ("Achievement:" + a.name,true);
 			}
 		}
 
@@ -335,8 +335,8 @@ public class AchieveActions : MonoBehaviour {
 		if (GameData._playerData.Achievements [5] == 0) {
 			if (wNew.Length >= a.req) {
 				StoreAchievement (5);
-				_floating.CallInFloating ("达成新成就:" + a.name,0);
-				_log.AddLog ("达成新成就:" + a.name,true);
+				_floating.CallInFloating ("Achievement:" + a.name,0);
+				_log.AddLog ("Achievement:" + a.name,true);
 			}
 		}
 	}
@@ -345,8 +345,8 @@ public class AchieveActions : MonoBehaviour {
 		if (GameData._playerData.Achievements [23] == 0) {
 			Achievement a = LoadTxt.GetAchievement (23);
 			StoreAchievement (23);
-			_floating.CallInFloating ("达成新成就:" + a.name,0);
-			_log.AddLog ("达成新成就:" + a.name,true);
+			_floating.CallInFloating ("Achievement:" + a.name,0);
+			_log.AddLog ("Achievement:" + a.name,true);
 		}
 	}
 
@@ -372,8 +372,8 @@ public class AchieveActions : MonoBehaviour {
 			Achievement a = LoadTxt.GetAchievement (6);
 			if (fNew.Length >= a.req) {
 				StoreAchievement (6);
-				_floating.CallInFloating ("达成新成就:" + a.name,0);
-				_log.AddLog ("达成新成就:" + a.name,true);
+				_floating.CallInFloating ("Achievement:" + a.name,0);
+				_log.AddLog ("Achievement:" + a.name,true);
 			}
 		}
 	}
@@ -403,8 +403,8 @@ public class AchieveActions : MonoBehaviour {
 			Achievement a = LoadTxt.GetAchievement (11);
 			if (mNew.Length >= a.req) {
 				StoreAchievement (11);
-				_floating.CallInFloating ("达成新成就:" + a.name,0);
-				_log.AddLog ("达成新成就:" + a.name,true);
+				_floating.CallInFloating ("Achievement:" + a.name,0);
+				_log.AddLog ("Achievement:" + a.name,true);
 			}
 		}
 	}
@@ -430,8 +430,8 @@ public class AchieveActions : MonoBehaviour {
 			Achievement a = LoadTxt.GetAchievement (13);
 			if (rNew.Length >= a.req) {
 				StoreAchievement (13);
-				_floating.CallInFloating ("达成新成就:" + a.name,0);
-				_log.AddLog ("达成新成就:" + a.name,true);
+				_floating.CallInFloating ("Achievement:" + a.name,0);
+				_log.AddLog ("Achievement:" + a.name,true);
 			}
 		}
 	}
@@ -458,8 +458,8 @@ public class AchieveActions : MonoBehaviour {
 			Achievement a = LoadTxt.GetAchievement (12);
 			if (mNew.Length >= a.req) {
 				StoreAchievement (12);
-				_floating.CallInFloating ("达成新成就:" + a.name,0);
-				_log.AddLog ("达成新成就:" + a.name,true);
+				_floating.CallInFloating ("Achievement:" + a.name,0);
+				_log.AddLog ("Achievement:" + a.name,true);
 			}
 		}
 	}
@@ -472,8 +472,8 @@ public class AchieveActions : MonoBehaviour {
 			Achievement a = LoadTxt.GetAchievement (14);
 			if (GameData._playerData.petsCaptured >= a.req) {
 				StoreAchievement (14);
-				_floating.CallInFloating ("达成新成就:" + a.name, 0);
-				_log.AddLog ("达成新成就:" + a.name,true);
+				_floating.CallInFloating ("Achievement:" + a.name, 0);
+				_log.AddLog ("Achievement:" + a.name,true);
 			}
 		}
 	}
@@ -483,8 +483,8 @@ public class AchieveActions : MonoBehaviour {
 		if (GameData._playerData.Achievements [15] == 0) {
 			a = LoadTxt.GetAchievement (15);
 			StoreAchievement (15);
-			_floating.CallInFloating ("达成新成就:" + a.name,0);
-			_log.AddLog ("达成新成就:" + a.name,true);
+			_floating.CallInFloating ("Achievement:" + a.name,0);
+			_log.AddLog ("Achievement:" + a.name,true);
 		}
 
 		//Dragon
@@ -492,8 +492,8 @@ public class AchieveActions : MonoBehaviour {
             if(monsterId==1801 || monsterId==1802 || monsterId==1803 || monsterId==2448 || monsterId==2449 || monsterId==2450) {
 				a = LoadTxt.GetAchievement (36);
 				StoreAchievement (36);
-				_floating.CallInFloating ("达成新成就:" + a.name,0);
-				_log.AddLog ("达成新成就:" + a.name,true);
+				_floating.CallInFloating ("Achievement:" + a.name,0);
+				_log.AddLog ("Achievement:" + a.name,true);
 			}
 		}
 	}
@@ -508,14 +508,14 @@ public class AchieveActions : MonoBehaviour {
 		if (openCount >= LoadTxt.GetAchievement(19).req && (GameData._playerData.Achievements [19] == 0)) {
 			a = LoadTxt.GetAchievement (19);
 			StoreAchievement (19);
-			_floating.CallInFloating ("达成新成就:" + a.name,0);
-			_log.AddLog ("达成新成就:" + a.name,true);
+			_floating.CallInFloating ("Achievement:" + a.name,0);
+			_log.AddLog ("Achievement:" + a.name,true);
 		}
 		if (openCount >= LoadTxt.GetAchievement(31).req && (GameData._playerData.Achievements [31] == 0)) {
 			StoreAchievement (31);
 			a = LoadTxt.GetAchievement (31);
-			_floating.CallInFloating ("达成新成就:" + a.name,0);
-			_log.AddLog ("达成新成就:" + a.name,true);
+			_floating.CallInFloating ("Achievement:" + a.name,0);
+			_log.AddLog ("Achievement:" + a.name,true);
 		}
 	}
 
@@ -525,16 +525,16 @@ public class AchieveActions : MonoBehaviour {
 			a = LoadTxt.GetAchievement (20);
 			if (GameData._playerData.dayNow >= a.req) {
 				StoreAchievement (20);
-				_floating.CallInFloating ("达成新成就:" + a.name,0);
-				_log.AddLog ("达成新成就:" + a.name,true);
+				_floating.CallInFloating ("Achievement:" + a.name,0);
+				_log.AddLog ("Achievement:" + a.name,true);
 			}
 		}
 		if (GameData._playerData.Achievements [34] == 0) {
 			a = LoadTxt.GetAchievement (34);
 			if (GameData._playerData.dayNow >= a.req) {
 				StoreAchievement (34);
-				_floating.CallInFloating ("达成新成就:" + a.name,0);
-				_log.AddLog ("达成新成就:" + a.name,true);
+				_floating.CallInFloating ("Achievement:" + a.name,0);
+				_log.AddLog ("Achievement:" + a.name,true);
 			}
 		}
 	}
@@ -543,8 +543,8 @@ public class AchieveActions : MonoBehaviour {
 		if (GameData._playerData.Achievements [18] == 0) {
 			Achievement a = LoadTxt.GetAchievement (18);
 			StoreAchievement (18);
-			_floating.CallInFloating ("达成新成就:" + a.name, 0);
-			_log.AddLog ("达成新成就:" + a.name,true);
+			_floating.CallInFloating ("Achievement:" + a.name, 0);
+			_log.AddLog ("Achievement:" + a.name,true);
 		}
 
 	}
@@ -558,8 +558,8 @@ public class AchieveActions : MonoBehaviour {
 			Achievement a = LoadTxt.GetAchievement (21);
 			if (GameData._playerData.sleepTime >= a.req) {
 				StoreAchievement (21);
-				_floating.CallInFloating ("达成新成就:" + a.name,0);
-				_log.AddLog ("达成新成就:" + a.name,true);
+				_floating.CallInFloating ("Achievement:" + a.name,0);
+				_log.AddLog ("Achievement:" + a.name,true);
 			}
 		}
 	}
@@ -575,8 +575,8 @@ public class AchieveActions : MonoBehaviour {
 		}
 		Achievement a = LoadTxt.GetAchievement (35);
 		StoreAchievement (35);
-		_floating.CallInFloating ("达成新成就:" + a.name,0);
-		_log.AddLog ("达成新成就:" + a.name,true);
+		_floating.CallInFloating ("Achievement:" + a.name,0);
+		_log.AddLog ("Achievement:" + a.name,true);
 	}
 
 	public void ConstructBulding(){
@@ -604,8 +604,8 @@ public class AchieveActions : MonoBehaviour {
 				return;
 			StoreAchievement (17);
 			a = LoadTxt.GetAchievement (17);
-			_floating.CallInFloating ("达成新成就:" + a.name,0);
-			_log.AddLog ("达成新成就:" + a.name, true);
+			_floating.CallInFloating ("Achievement:" + a.name,0);
+			_log.AddLog ("Achievement:" + a.name, true);
 		}
 
 		if (GameData._playerData.Achievements [33] == 0) {
@@ -631,8 +631,8 @@ public class AchieveActions : MonoBehaviour {
 				return;
 			StoreAchievement (33);
 			a = LoadTxt.GetAchievement (33);
-			_floating.CallInFloating ("达成新成就:" + a.name,0);
-			_log.AddLog ("达成新成就:" + a.name,true);
+			_floating.CallInFloating ("Achievement:" + a.name,0);
+			_log.AddLog ("Achievement:" + a.name,true);
 		}
 	}
 
@@ -645,8 +645,8 @@ public class AchieveActions : MonoBehaviour {
 				a = LoadTxt.GetAchievement (25);
 				if (GameData._playerData.meleeAttackCount >= a.req) {
 					StoreAchievement (25);
-					_floating.CallInFloating ("达成新成就:" + a.name,0);
-					_log.AddLog ("达成新成就:" + a.name,true);
+					_floating.CallInFloating ("Achievement:" + a.name,0);
+					_log.AddLog ("Achievement:" + a.name,true);
 				}
 			}
 		}
@@ -657,8 +657,8 @@ public class AchieveActions : MonoBehaviour {
 				a = LoadTxt.GetAchievement (26);
 				if (GameData._playerData.rangedAttackCount >=a.req) {
 					StoreAchievement (26);
-					_floating.CallInFloating ("达成新成就:" + a.name,0);
-					_log.AddLog ("达成新成就:" + a.name,true);
+					_floating.CallInFloating ("Achievement:" + a.name,0);
+					_log.AddLog ("Achievement:" + a.name,true);
 				}
 			}
 		}
@@ -669,8 +669,8 @@ public class AchieveActions : MonoBehaviour {
 				a = LoadTxt.GetAchievement (27);
 				if (GameData._playerData.magicAttackCount >= a.req) {
 					StoreAchievement (27);
-					_floating.CallInFloating ("达成新成就:" + a.name,0);
-					_log.AddLog ("达成新成就:" + a.name,true);
+					_floating.CallInFloating ("Achievement:" + a.name,0);
+					_log.AddLog ("Achievement:" + a.name,true);
 				}
 			}
 		}
@@ -685,8 +685,8 @@ public class AchieveActions : MonoBehaviour {
 			a = LoadTxt.GetAchievement (1);
 			if (GameData._playerData.thiefCaught >= a.req) {
 				StoreAchievement (1);
-				_floating.CallInFloating ("达成新成就:" + a.name, 0);
-				_log.AddLog ("达成新成就:" + a.name, true);
+				_floating.CallInFloating ("Achievement:" + a.name, 0);
+				_log.AddLog ("Achievement:" + a.name, true);
 			}
 		}
 
@@ -697,8 +697,8 @@ public class AchieveActions : MonoBehaviour {
 				a = LoadTxt.GetAchievement (38);
 				if (GameData._playerData.legendThiefCaught >= a.req) {
 					StoreAchievement (38);
-					_floating.CallInFloating ("达成新成就:" + a.name,0);
-					_log.AddLog ("达成新成就:" + a.name,true);
+					_floating.CallInFloating ("Achievement:" + a.name,0);
+					_log.AddLog ("Achievement:" + a.name,true);
 				}
 			}
 		}
@@ -710,8 +710,8 @@ public class AchieveActions : MonoBehaviour {
 		Achievement a = LoadTxt.GetAchievement (10);
 		if (GameData._playerData.Renown >= a.req) {
 			StoreAchievement (10);
-			_floating.CallInFloating ("达成新成就:" + a.name,0);
-			_log.AddLog ("达成新成就:" + a.name,true);
+			_floating.CallInFloating ("Achievement:" + a.name,0);
+			_log.AddLog ("Achievement:" + a.name,true);
 		}
 
 		if (GameData._playerData.Achievements [9] == 1)
@@ -719,8 +719,8 @@ public class AchieveActions : MonoBehaviour {
 		a = LoadTxt.GetAchievement (9);
 		if (GameData._playerData.Renown >= a.req) {
 			StoreAchievement (9);
-			_floating.CallInFloating ("达成新成就:" + a.name,0);
-			_log.AddLog ("达成新成就:" + a.name,true);
+			_floating.CallInFloating ("Achievement:" + a.name,0);
+			_log.AddLog ("Achievement:" + a.name,true);
 		}
 
 		if (GameData._playerData.Achievements [8] == 1)
@@ -728,8 +728,8 @@ public class AchieveActions : MonoBehaviour {
 		a = LoadTxt.GetAchievement (8);
 		if (GameData._playerData.Renown >= a.req) {
 			StoreAchievement (8);
-			_floating.CallInFloating ("达成新成就:" + a.name,0);
-			_log.AddLog ("达成新成就:" + a.name,true);
+			_floating.CallInFloating ("Achievement:" + a.name,0);
+			_log.AddLog ("Achievement:" + a.name,true);
 		}
 		
 		if (GameData._playerData.Achievements [7] == 1)
@@ -737,8 +737,8 @@ public class AchieveActions : MonoBehaviour {
 		a = LoadTxt.GetAchievement (7);
 		if (GameData._playerData.Renown >= a.req) {
 			StoreAchievement (7);
-			_floating.CallInFloating ("达成新成就:" +a.name,0);
-			_log.AddLog ("达成新成就:" + a.name,true);
+			_floating.CallInFloating ("Achievement:" +a.name,0);
+			_log.AddLog ("Achievement:" + a.name,true);
 		}
 		
 	}
@@ -750,8 +750,8 @@ public class AchieveActions : MonoBehaviour {
 		if (GameData._playerData.dungeonLevelMax >= a.req)
         {
             StoreAchievement (37);
-			_floating.CallInFloating ("达成新成就:" + a.name,0);
-			_log.AddLog ("达成新成就:" + a.name,true);
+			_floating.CallInFloating ("Achievement:" + a.name,0);
+			_log.AddLog ("Achievement:" + a.name,true);
         }
 
         if (GameData._playerData.Achievements[24] == 1)
@@ -760,8 +760,8 @@ public class AchieveActions : MonoBehaviour {
 		if (GameData._playerData.dungeonLevelMax >= a.req)
         {
             StoreAchievement (24);
-			_floating.CallInFloating ("达成新成就:" + a.name,0);
-			_log.AddLog ("达成新成就:" + a.name,true);
+			_floating.CallInFloating ("Achievement:" + a.name,0);
+			_log.AddLog ("Achievement:" + a.name,true);
         }
 	}
 

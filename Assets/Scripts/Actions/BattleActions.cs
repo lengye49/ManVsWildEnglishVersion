@@ -72,14 +72,14 @@ public class BattleActions : MonoBehaviour {
 
 		if (isAttacked) {
 			if (monsters.Length > 1)
-				AddLog ("注意，你被" + monsters.Length + "名敌人围攻了!", 0);
+				AddLog ("Warning, you're attacked by " + monsters.Length + "enemies.", 0);
 			else
-				AddLog ("注意，你被" + monsters [0].name + "偷袭了！", 0);
+				AddLog ("Warning, you're attacked by " + monsters [0].name + ".", 0);
 		} else {
 			if (monsters.Length > 1)
-				AddLog ("你发现了" + monsters.Length + "名敌人!", 0);
+				AddLog ("You found " + monsters.Length + "enemies.", 0);
 			else
-				AddLog ("你发现了" + monsters [0].name + "!", 0);
+				AddLog ("You found " + monsters [0].name + ".", 0);
 		}
 
 		CheckNewPlayerGuide ();
@@ -291,16 +291,16 @@ public class BattleActions : MonoBehaviour {
 		float d = Mathf.Max (0, distance + speed * f);
 		float dis = distance - d;
 		distance = d;
-		string s = forward ? "前进" : "后退";
+		string s = forward ? "move forward" : "move backward";
 		if (isEnemyMove) {
 			enemyNextTurn += 1;
-			AddLog (enemy.name + s + "了" + dis + "米。", 0);
+			AddLog (enemy.name + s + " " + dis + " m.", 0);
 		} else {
 			myNextTurn += 1;
-			AddLog ("你" + s + "了" + dis + "米。", 0);
+			AddLog ("You " + s + " " + dis + " m.", 0);
 		}
 
-		enemyDistance.text = distance + "米";
+		enemyDistance.text = distance + "m";
 		SetPoint ();
 		SetActions ();
 	}
@@ -313,29 +313,25 @@ public class BattleActions : MonoBehaviour {
 		int hitRate = Algorithms.IsDodgeOrCrit (hit, dodge, vitalSensibility, spirit);
 		string hitPart = "";
 		if (hitRate == 0) {
-//			Debug.Log ("Missed!");
-			AddLog ((isMyAtk ? "你" : enemy.name) + "发起攻击，但是" + (isMyAtk ? enemy.name : "你") + "灵巧地躲开了!",0);
+			AddLog ((isMyAtk ? "You" : enemy.name) + " attacked " + (isMyAtk ? enemy.name : "you") + " but missed.",0);
 			return;
 		} else if (hitRate == 1) {
-			hitPart = isMyAtk ? GetHitPart (enemy.hit_Body) : "身体";
+			hitPart = isMyAtk ? GetHitPart (enemy.hit_Body) : "Body";
 		} else {
-			hitPart = isMyAtk ? GetHitPart (enemy.hit_Vital) : "头部";
+			hitPart = isMyAtk ? GetHitPart (enemy.hit_Vital) : "Head";
 		}
 
 		int dam = Algorithms.CalculateDamage (atk, def, s, hitRate,isMyAtk);
-//		Debug.Log ("Atk = " + atk + ", Dam = " + dam);
 
 		if (isMyAtk) {
 			enemy.hp -= dam;
 			SetEnemyHpSlider ();
-//			if(s>0)
-//				AddEffect (LoadTxt.skillDic [skillId], isMyAtk, dam);
-			AddLog ("你击中了" + enemy.name + "的" + hitPart + "，造成"+dam+"点伤害。", 0);
+			AddLog ("You hit " + enemy.name + "'s " + hitPart + ", Hp -"+dam+".", 0);
 		} else {
 			_gameData.ChangeProperty (0, -dam);
 			SetMyHpSlider ();
 			AddEffect (s, isMyAtk, dam);
-			AddLog (enemy.name + "击中了你的" + hitPart + "，造成"+dam+"点伤害。", 0);
+			AddLog (enemy.name + " hit your " + hitPart + ", Hp -"+dam+".", 0);
 		}
 
 		CheckBattleEnd ();
@@ -359,7 +355,7 @@ public class BattleActions : MonoBehaviour {
 						AddLog (enemy.name + "受到[减速]效果，2秒内无法行动。", 0);
 					} else {
 						myNextTurn += 2;
-						AddLog ("你受到[减速]效果，2秒内无法行动。", 0);
+						AddLog ("[SLOW], stop 2s.", 0);
 					}
 					break;
 				case 101:
@@ -368,7 +364,7 @@ public class BattleActions : MonoBehaviour {
 						AddLog (enemy.name + "受到[减速]效果，3秒内无法行动。", 0);
 					} else {
 						myNextTurn += 3;
-						AddLog ("你受到[混乱]效果，3秒内无法行动。", 0);
+						AddLog ("[CHAOS], stop 3s.", 0);
 					}
 					break;
 				case 102:
@@ -377,7 +373,7 @@ public class BattleActions : MonoBehaviour {
 						AddLog (enemy.name + "受到[魅惑]效果，5秒内无法行动。", 0);
 					} else {
 						myNextTurn += 5;
-						AddLog ("你受到[魅惑]效果，5秒内无法行动。", 0);
+						AddLog ("[CHARM], stop 5s.", 0);
 					}
 					break;
 				case 103:
@@ -386,7 +382,7 @@ public class BattleActions : MonoBehaviour {
 						AddLog (enemy.name + "受到[眩晕]效果，7秒内无法行动。", 0);
 					} else {
 						myNextTurn += 4;
-						AddLog ("你受到[眩晕]效果，7秒内无法行动", 0);
+						AddLog ("[Dizzy], stop 7s.", 0);
 					}
 					break;
 				case 104:
@@ -396,7 +392,7 @@ public class BattleActions : MonoBehaviour {
 					} else {
 						myNextTurn += 4;
 						_gameData.ChangeProperty (10, -5);
-						AddLog ("你受到[冰冻]效果，7秒内无法行动，温度-5℃。", 0);
+						AddLog ("[FREEZE], stop 2s, Temp. -5℃.", 0);
 					}
 					break;
 				case 105:
@@ -405,7 +401,7 @@ public class BattleActions : MonoBehaviour {
 						AddLog (enemy.name + "被石化了5秒。", 0);
 					} else {
 						myNextTurn += 5;
-						AddLog ("你被石化了5秒。", 0);
+						AddLog ("[PETRIFIED], stop 2s.", 0);
 					}
 					break;
 				case 106:
@@ -416,7 +412,7 @@ public class BattleActions : MonoBehaviour {
 					} else {
 						_gameData.ChangeProperty (2, -5);
 						enemy.spirit += 5;
-						AddLog (enemy.name + "吸取了你5点精神。", 0);
+						AddLog (enemy.name + "steal 5 spirit from you.", 0);
 					}
 					break;
 				case 107:
@@ -425,7 +421,7 @@ public class BattleActions : MonoBehaviour {
 						AddLog (enemy.name + "受到[束缚]效果，3秒内无法行动。", 0);
 					} else {
 						myNextTurn += 3;
-						AddLog ("你受到[束缚]效果，3秒内无法行动。", 0);
+						AddLog ("[BOUND], stop 3s.", 0);
 					}
 					break;
 				case 109:
@@ -435,7 +431,7 @@ public class BattleActions : MonoBehaviour {
 						AddLog ("并吸取了" + hpPlus + "点生命。", 0);
 					} else {
 						enemy.hp += hpPlus;
-						AddLog ("并吸取了" + hpPlus + "点生命。", 0);
+						AddLog ("and steal " + hpPlus + "Hp.", 0);
 					}
 					break;
 				case 110:
@@ -445,13 +441,13 @@ public class BattleActions : MonoBehaviour {
 						AddLog ("并吸取了" + hpPlus1 + "点生命。", 0);
 					} else {
 						enemy.hp += hpPlus1;
-						AddLog ("并吸取了" + hpPlus1 + "点生命。", 0);
+						AddLog ("and steal " + hpPlus1 + "Hp.", 0);
 					}
 					break;
 				case 111:
 					if (!isMyAtk) {
 						_gameData.ChangeProperty (10, 5);
-						AddLog ("温度+5℃。", 0);
+						AddLog ("Temp. +5℃。", 0);
 					}
 					break;
 				default:
@@ -471,20 +467,20 @@ public class BattleActions : MonoBehaviour {
 			return;
 		}
 
-		string s = "你击败了" + enemy.name + "。";
+		string s = "You defeated" + enemy.name + ".";
 		AddLog (s, 1);
 
 		if (enemy.mapOpen > 0) {
 			if (GameData._playerData.MapOpenState [enemy.mapOpen] == 0) {
 				GameData._playerData.MapOpenState [enemy.mapOpen] = 1;
 				_gameData.StoreData ("MapOpenState", _gameData.GetStrFromMapOpenState (GameData._playerData.MapOpenState));
-				s = "他告诉你去往" + LoadTxt.MapDic [enemy.mapOpen].name + "的方向。";
+				s = "He tells you the way to " + LoadTxt.MapDic [enemy.mapOpen].name + ".";
 				AddLog (s, 1);
-				_logManager.AddLog ("你发现了去" + LoadTxt.MapDic [enemy.mapOpen].name + "的路。", true);
+				_logManager.AddLog ("You find new place:" + LoadTxt.MapDic [enemy.mapOpen].name + ".", true);
 			} else {
-				s = "他告诉你去往" + LoadTxt.MapDic [enemy.mapOpen].name + "的方向。";
+				s = "He tells you the way to " + LoadTxt.MapDic [enemy.mapOpen].name + ".";
 				AddLog (s, 1);
-				s = "但是你已经知道了。";
+				s = "But you already knows.";
 				AddLog (s, 1);
 			}
 		}
@@ -492,7 +488,7 @@ public class BattleActions : MonoBehaviour {
 		Dictionary<int,int> drop = Algorithms.GetReward (enemy.drop);
 
 		if (drop.Count > 0) {
-            s = "获得了";
+            s = "";
 			foreach (int key in drop.Keys) {
 				int itemId = GenerateItemId (key);
 				_gameData.AddItem (itemId, drop [key]);
@@ -515,14 +511,14 @@ public class BattleActions : MonoBehaviour {
 			}
 			s = s.Substring (0, s.Length - 1) ;
 			if (enemy.renown > 0) {
-				s += "和" + enemy.renown + "点声望。";
+				s += " and " + enemy.renown + "renown.";
 			} else {
 				s += "。";
 			}
 			AddLog (s,1);
 		} else {			
 			if (enemy.renown > 0) {
-				s = "获得了" + enemy.renown + "点声望。";
+				s = "Renown +" + enemy.renown + ".";
 				AddLog (s,1);
 			} 
 		}
@@ -533,23 +529,23 @@ public class BattleActions : MonoBehaviour {
 
         if (enemy.monsterId == 3008 && GameData._playerData.orderCamp == 0)
         {
-            AddLog("你获得了秩序阵营的认可，秩序阵营决定退出战争。", 1);
+            AddLog("Order agreed to stop the war.", 1);
         }
         else if (enemy.monsterId == 3108 && GameData._playerData.truthCamp == 0)
         {
-            AddLog("你获得了真理阵营的认可，真理阵营决定不再挑起战争。", 1);
+            AddLog("Truth agreed to stop the war.", 1);
         }
         else if (enemy.monsterId == 3208 && GameData._playerData.lifeCamp == 0)
         {
-            AddLog("你获得了生命阵营的认可，生命阵营决定回归森林。", 1);
+			AddLog("Life agreed to stop the war.", 1);
         }
         else if (enemy.monsterId == 3308 && GameData._playerData.chaosCamp == 0)
         {
-            AddLog("你获得了混乱阵营的认可，混乱阵营决定退回深渊。", 1);
+			AddLog("Abyss agreed to stop the war.", 1);
         }
         else if (enemy.monsterId == 3408 && GameData._playerData.deathCamp == 0)
         {
-            AddLog("你获得了死亡阵营的认可，死亡阵营决定保持沉寂。", 1);
+			AddLog("Death agreed to stop the war.", 1);
         }
         
 		//添加成就
@@ -665,12 +661,12 @@ public class BattleActions : MonoBehaviour {
 		if (GameData._playerData.MagicId / 10000 == 303 || GameData._playerData.MagicId / 10000 == 305) {
 			int heal = (int)(GameData._playerData.property [24] * GameData._playerData.MagicPower / 10);
 			_gameData.ChangeProperty (0, heal);
-			AddLog ("你使用" + LoadTxt.MatDic [GameData._playerData.MagicId / 10000].name + ",回复了" + heal + "点生命。", 0);
+			AddLog ("You used " + LoadTxt.MatDic [GameData._playerData.MagicId / 10000].name + ",hp +" + heal + ".", 0);
 		} else {
 			int dam = (int)(GameData._playerData.property [24] * GameData._playerData.MagicPower );
 			enemy.hp -= dam;
 			enemy.hp = Mathf.Max (0, enemy.hp);
-			AddLog ("你使用" + LoadTxt.MatDic [GameData._playerData.MagicId / 10000].name + ",对" + enemy.name + "造成" + dam + "点伤害。", 0);
+			AddLog ("You used " + LoadTxt.MatDic [GameData._playerData.MagicId / 10000].name + "," + enemy.name + " Hp -" + dam + ".", 0);
 		}
 
 		SetEnemyHpSlider ();
@@ -692,7 +688,7 @@ public class BattleActions : MonoBehaviour {
 		if (enemy.canCapture == 0 || (enemy.hp / enemyMaxHp > 0.5f) || captureFailTime >= 3)
 			return;
 		if (_gameData.GetUsedPetSpace () + enemy.canCapture > GameData._playerData.PetsOpen * 10) {
-			_floating.CallInFloating ("宠物笼空间不足!", 1);
+			_floating.CallInFloating ("Insufficient Pet Space!", 1);
 			return;
 		}
 
@@ -710,7 +706,7 @@ public class BattleActions : MonoBehaviour {
 			p.speed = (int)enemy.speed;
 			p.name = enemy.name;
 			_gameData.AddPet (p);
-			AddLog ("你捕获了新宠物: " + enemy.name, 0);
+			AddLog ("New Pet: " + enemy.name, 0);
 
 			//Achievement
 			this.gameObject.GetComponentInParent<AchieveActions> ().CapturePet ();
@@ -718,9 +714,9 @@ public class BattleActions : MonoBehaviour {
 			StartCoroutine (WaitAndCheck ());
 		}else{
 			captureFailTime++;
-			AddLog ("你试图抓捕" + enemy.name + "，但是失败了。", 0);
+			AddLog ("You tried to capture " + enemy.name + ", but failed.", 0);
             if(captureFailTime>=3)
-                AddLog ("已经超过捕捉上限，该猎物不能被捕捉了。", 0);
+                AddLog ("Can not capture over 3 times.", 0);
 			CheckEnemyAction ();
 		}
 	}
@@ -760,9 +756,7 @@ public class BattleActions : MonoBehaviour {
 			return;
 		_gameData.battleCount++;
 		_gameData.StoreData ("BattleCount", _gameData.battleCount);
-		AddLog ("点击[前跳]靠近对手，[后跃]拉开距离;", 0);
-		AddLog ("点击[近战]、[远程]、[魔法]使用对应武器攻击;", 0);
-		AddLog ("某些对手在生命值较低时可以被[捕获]为宠物;", 0);
-		AddLog ("在你优势较大时可以点击[自动]开启自动战斗。", 0);
+		AddLog ("Click [Forward] to get near, [Backward] to get away;", 0);
+		AddLog ("Some enemy can be captured when it's hp<30%.", 0);
 	}
 }

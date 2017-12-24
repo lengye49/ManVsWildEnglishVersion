@@ -65,42 +65,42 @@ public class TipManager : MonoBehaviour {
 		ClearBuildTip ();
 
 		buildTipButton [0].gameObject.SetActive (true);
-		buildTipButton[0].gameObject.GetComponentInChildren<Text>().text = "取消";
+		buildTipButton[0].gameObject.GetComponentInChildren<Text>().text = "Cancel";
 		buildTipButton [1].gameObject.SetActive (true);
-		buildTipButton[1].gameObject.GetComponentInChildren<Text>().text = "开工"; 
+		buildTipButton[1].gameObject.GetComponentInChildren<Text>().text = "Build"; 
 		buildTipButton [1].gameObject.name = buildingName;
 
 		Building b = new Building ();
 		switch (buildingName) {
 		case "BedRoom":
-			b = LoadTxt.GetBuilding ("休息室", GameData._playerData.BedRoomOpen + 1);
+			b = LoadTxt.GetBuilding ("BedRoom", GameData._playerData.BedRoomOpen + 1);
 			break;
 		case "Warehouse":
-			b = LoadTxt.GetBuilding ("仓库", GameData._playerData.WarehouseOpen + 1);
+			b = LoadTxt.GetBuilding ("Warehouse", GameData._playerData.WarehouseOpen + 1);
 			break;
 		case "Kitchen":
-			b = LoadTxt.GetBuilding ("厨房", GameData._playerData.KitchenOpen + 1);
+			b = LoadTxt.GetBuilding ("Kitchen", GameData._playerData.KitchenOpen + 1);
 			break;
 		case "Workshop":
-			b = LoadTxt.GetBuilding ("工作台", GameData._playerData.WorkshopOpen + 1);
+			b = LoadTxt.GetBuilding ("Workshop", GameData._playerData.WorkshopOpen + 1);
 			break;
 		case "Well":
-			b = LoadTxt.GetBuilding ("水井", GameData._playerData.WellOpen + 1);
+			b = LoadTxt.GetBuilding ("Well", GameData._playerData.WellOpen + 1);
 			break;
 		case "Study":
-			b = LoadTxt.GetBuilding ("研究室", GameData._playerData.StudyOpen + 1);
+			b = LoadTxt.GetBuilding ("Study", GameData._playerData.StudyOpen + 1);
 			break;
 		case "Farm":
 			b = LoadTxt.GetBuilding ("农田", GameData._playerData.FarmOpen + 1);
 			break;
 		case "Pets":
-			b = LoadTxt.GetBuilding ("宠物笼", GameData._playerData.PetsOpen + 1);
+			b = LoadTxt.GetBuilding ("Pets", GameData._playerData.PetsOpen + 1);
 			break;
 		case "Achievement":
-			b = LoadTxt.GetBuilding ("成就", GameData._playerData.AchievementOpen + 1);
+			b = LoadTxt.GetBuilding ("Achievement", GameData._playerData.AchievementOpen + 1);
 			break;
 		case "Altar":
-			b = LoadTxt.GetBuilding ("祭坛", GameData._playerData.AltarOpen + 1);
+			b = LoadTxt.GetBuilding ("Altar", GameData._playerData.AltarOpen + 1);
 			break;
 		default:
 			Debug.Log ("没有找到建筑--" + buildingName);
@@ -124,16 +124,16 @@ public class TipManager : MonoBehaviour {
 			}
 			i++;
 		}
-		buildTipText [i].text = "耗时: " + GetTime (b.timeCost * GameData._playerData.ConstructTimeDiscount);
+		buildTipText [i].text = "Time: " + GetTime (b.timeCost * GameData._playerData.ConstructTimeDiscount);
 		buildTipText [i].color = Color.white;
 	}
 
 	string GetTime(float hFloat){
 		int hInt = (int)hFloat;
 		if (hFloat - hInt == 0)
-			return hInt + "时";
+			return hInt + "h";
 		else {
-			return hInt + "时" + (int)(60 * hFloat - 60 * hInt) + "分";
+			return hInt + "h" + (int)(60 * hFloat - 60 * hInt) + "min";
 		}
 	}
 
@@ -164,9 +164,9 @@ public class TipManager : MonoBehaviour {
 		_gameData.ChangeTime ((int)(b.timeCost * GameData._playerData.ConstructTimeDiscount * 60));
 
 		if (GameData._playerData.BedRoomOpen == 1) {
-			_logManager.AddLog ("休息室已建造完毕。",true);
+			_logManager.AddLog ("BedRoom Completed.",true);
 		} else {
-			_logManager.AddLog ("休息室已升级到等级"+ GameData._playerData.BedRoomOpen,true);
+			_logManager.AddLog ("BedRoom Upgraded to Lv."+ GameData._playerData.BedRoomOpen,true);
 		}
 
 		_homeManager.UpdateContent ();
@@ -190,12 +190,12 @@ public class TipManager : MonoBehaviour {
 		_gameData.ChangeTime ((int)(b.timeCost * GameData._playerData.ConstructTimeDiscount * 60));
 
 		if (GameData._playerData.WarehouseOpen == 1) {
-			_logManager.AddLog ("仓库已建造完毕。",true);
+			_logManager.AddLog ("Warehouse Completed.",true);
 
 			//第一次获得进贡
 			_gameData.GetFirstTribute ();
 		} else {
-			_logManager.AddLog ("仓库已升级到等级"+ GameData._playerData.WarehouseOpen,true);
+			_logManager.AddLog ("Warehouse Upgraded to Lv."+ GameData._playerData.WarehouseOpen,true);
 		}
 
 		_homeManager.UpdateContent ();
@@ -218,10 +218,9 @@ public class TipManager : MonoBehaviour {
 		_gameData.ChangeTime ((int)(b.timeCost * GameData._playerData.ConstructTimeDiscount * 60));
 
 		if (GameData._playerData.KitchenOpen == 1) {
-			_logManager.AddLog ("厨房已建造完毕。",true);
-			_logManager.AddLog (1f, "建造完[休息室]后，你可以点击页面右下角的[地图]到四周转转。");
+			_logManager.AddLog ("Kitchen Completed.",true);
 		} else {
-			_logManager.AddLog ("厨房已升级到等级"+ GameData._playerData.KitchenOpen,true);
+			_logManager.AddLog ("Kitchen Upgraded to Lv."+ GameData._playerData.KitchenOpen,true);
 		}
 
 		_homeManager.UpdateContent ();
@@ -244,9 +243,9 @@ public class TipManager : MonoBehaviour {
 		_gameData.ChangeTime ((int)(b.timeCost * GameData._playerData.ConstructTimeDiscount * 60));
 
 		if (GameData._playerData.WorkshopOpen == 1) {
-			_logManager.AddLog ("工作台已建造完毕。",true);
+			_logManager.AddLog ("Workshop Completed.",true);
 		} else {
-			_logManager.AddLog ("工作台已升级到等级"+ GameData._playerData.WorkshopOpen,true);
+			_logManager.AddLog ("Workshop Upgraded to Lv."+ GameData._playerData.WorkshopOpen,true);
 		}
 
 		_homeManager.UpdateContent ();
@@ -269,9 +268,9 @@ public class TipManager : MonoBehaviour {
 		_gameData.ChangeTime ((int)(b.timeCost * GameData._playerData.ConstructTimeDiscount * 60));
 
 		if (GameData._playerData.StudyOpen == 1) {
-			_logManager.AddLog ("研究室已建造完毕。",true);
+			_logManager.AddLog ("Study Completed.",true);
 		} else {
-			_logManager.AddLog ("研究室已升级到等级"+ GameData._playerData.StudyOpen,true);
+			_logManager.AddLog ("Study Upgraded to Lv."+ GameData._playerData.StudyOpen,true);
 		}
 
 		_homeManager.UpdateContent ();
@@ -303,9 +302,9 @@ public class TipManager : MonoBehaviour {
 		_gameData.ChangeTime ((int)(b.timeCost * GameData._playerData.ConstructTimeDiscount * 60));
 
 		if (GameData._playerData.FarmOpen == 1) {
-			_logManager.AddLog ("农田已准备妥当。",true);
+			_logManager.AddLog ("Farm Completed.",true);
 		} else {
-			_logManager.AddLog ("农田已升级到等级"+ GameData._playerData.FarmOpen,true);
+			_logManager.AddLog ("Farm Upgraded to Lv."+ GameData._playerData.FarmOpen,true);
 		}
 		this.gameObject.GetComponentInChildren<FarmActions> ().UpdateFarm ();
 		_homeManager.UpdateContent ();
@@ -327,9 +326,9 @@ public class TipManager : MonoBehaviour {
 		_gameData.ChangeTime ((int)(b.timeCost * GameData._playerData.ConstructTimeDiscount * 60));
 
 		if (GameData._playerData.PetsOpen == 1) {
-			_logManager.AddLog ("宠物笼已建造完毕。",true);
+			_logManager.AddLog ("Pets Completed.",true);
 		} else {
-			_logManager.AddLog ("宠物笼已升级到等级"+ GameData._playerData.PetsOpen,true);
+			_logManager.AddLog ("Pets Upgraded to Lv."+ GameData._playerData.PetsOpen,true);
 		}
 		this.gameObject.GetComponentInChildren<PetsActions> ().UpdatePets ();
         this.gameObject.GetComponent<AchieveActions> ().ConstructBulding ();
@@ -351,9 +350,9 @@ public class TipManager : MonoBehaviour {
 		_gameData.ChangeTime ((int)(b.timeCost * GameData._playerData.ConstructTimeDiscount * 60));
 
 		if (GameData._playerData.WellOpen == 1) {
-			_logManager.AddLog ("水井已建造完毕。",true);
+			_logManager.AddLog ("Well Completed.",true);
 		} else {
-			_logManager.AddLog ("水井已升级到等级"+ GameData._playerData.WellOpen,true);
+			_logManager.AddLog ("Well Upgraded to Lv."+ GameData._playerData.WellOpen,true);
 		}
 
 		_homeManager.UpdateContent ();
@@ -382,9 +381,9 @@ public class TipManager : MonoBehaviour {
 		_gameData.ChangeTime ((int)(b.timeCost * GameData._playerData.ConstructTimeDiscount * 60));
 
 		if (GameData._playerData.AltarOpen == 1) {
-			_logManager.AddLog ("祭坛已建造完毕，成就系统已开启。",true);
+			_logManager.AddLog ("Altar and Achievement Completed.",true);
 		} else {
-			_logManager.AddLog ("祭坛已升级到等级"+ GameData._playerData.AltarOpen,true);
+			_logManager.AddLog ("Altar Upgraded to Lv."+ GameData._playerData.AltarOpen,true);
 		}
 
 		_homeManager.UpdateContent ();
@@ -396,7 +395,7 @@ public class TipManager : MonoBehaviour {
 		Building b = new Building ();
 		switch (s) {
 		case "BedRoom":
-			b = LoadTxt.GetBuilding ("休息室", GameData._playerData.BedRoomOpen + 1);
+			b = LoadTxt.GetBuilding ("BedRoom", GameData._playerData.BedRoomOpen + 1);
 			if (!CheckReq (b.combReq))
 				break;
 			else {
@@ -404,7 +403,7 @@ public class TipManager : MonoBehaviour {
 				break;
 			}
 		case "Warehouse":
-			b = LoadTxt.GetBuilding ("仓库", GameData._playerData.WarehouseOpen + 1);
+			b = LoadTxt.GetBuilding ("Warehouse", GameData._playerData.WarehouseOpen + 1);
 			if (!CheckReq (b.combReq))
 				break;
 			else {
@@ -412,7 +411,7 @@ public class TipManager : MonoBehaviour {
 				break;
 			}
 		case "Kitchen":
-			b = LoadTxt.GetBuilding ("厨房", GameData._playerData.KitchenOpen + 1);
+			b = LoadTxt.GetBuilding ("Kitchen", GameData._playerData.KitchenOpen + 1);
 			if (!CheckReq (b.combReq))
 				break;
 			else {
@@ -420,7 +419,7 @@ public class TipManager : MonoBehaviour {
 				break;
 			}
 		case "Workshop":
-			b = LoadTxt.GetBuilding ("工作台", GameData._playerData.WorkshopOpen + 1);
+			b = LoadTxt.GetBuilding ("Workshop", GameData._playerData.WorkshopOpen + 1);
 			if (!CheckReq (b.combReq))
 				break;
 			else {
@@ -428,7 +427,7 @@ public class TipManager : MonoBehaviour {
 				break;
 			}
 		case "Study":
-			b = LoadTxt.GetBuilding ("研究室", GameData._playerData.StudyOpen + 1);
+			b = LoadTxt.GetBuilding ("Study", GameData._playerData.StudyOpen + 1);
 			if (!CheckReq (b.combReq))
 				break;
 			else {
@@ -436,7 +435,7 @@ public class TipManager : MonoBehaviour {
 				break;
 			}
 		case "Farm":
-			b = LoadTxt.GetBuilding ("农田", GameData._playerData.FarmOpen + 1);
+			b = LoadTxt.GetBuilding ("Farm", GameData._playerData.FarmOpen + 1);
 			if (!CheckReq (b.combReq))
 				break;
 			else {
@@ -444,7 +443,7 @@ public class TipManager : MonoBehaviour {
 				break;
 			}
 		case "Pets":
-			b = LoadTxt.GetBuilding ("宠物笼", GameData._playerData.PetsOpen + 1);
+			b = LoadTxt.GetBuilding ("Pets", GameData._playerData.PetsOpen + 1);
 			if (!CheckReq (b.combReq))
 				break;
 			else {
@@ -452,7 +451,7 @@ public class TipManager : MonoBehaviour {
 				break;
 			}
 		case "Well":
-			b = LoadTxt.GetBuilding ("水井", GameData._playerData.WellOpen + 1);
+			b = LoadTxt.GetBuilding ("Well", GameData._playerData.WellOpen + 1);
 			if (!CheckReq (b.combReq))
 				break;
 			else {
@@ -462,7 +461,7 @@ public class TipManager : MonoBehaviour {
 		case "MailBox":
 			break;
 		case "Altar":
-			b = LoadTxt.GetBuilding ("祭坛", GameData._playerData.AltarOpen + 1);
+			b = LoadTxt.GetBuilding ("Altar", GameData._playerData.AltarOpen + 1);
 			if (!CheckReq (b.combReq))
 				break;
 			else {
@@ -493,8 +492,8 @@ public class TipManager : MonoBehaviour {
 		ClearMakingTipTexts ();
 		makingTipText [0].text = LoadTxt.MatDic[matId].name;
 		makingTipText [0].color = GameConfigs.MatColor [LoadTxt.MatDic [matId].quality];
-		makingTipButton[0].gameObject.GetComponentInChildren<Text>().text ="取消"; 
-		makingTipButton[1].gameObject.GetComponentInChildren<Text>().text ="制作"; 
+		makingTipButton[0].gameObject.GetComponentInChildren<Text>().text ="Cancel"; 
+		makingTipButton[1].gameObject.GetComponentInChildren<Text>().text ="Make"; 
 		makingTipButton [1].interactable = CheckReq (LoadTxt.MatDic[matId].combReq);
 		makingTipButton [1].gameObject.name = matId.ToString ();
 		SetMakingTipDesc (LoadTxt.MatDic [matId]);
@@ -528,7 +527,7 @@ public class TipManager : MonoBehaviour {
 	void SetMakingTipDesc(Mats m){
         makingTipText[1].text = m.description;
         makingTipText [1].color = new Color (24f / 255f, 193f / 255f, 172f / 255f, 1f);
-        makingTipText[2].text = "属性:";
+        makingTipText[2].text = "Property:";
         makingTipText [2].color = new Color (24f / 255f, 193f / 255f, 172f / 255f, 1f);
 		int i = 3;
 		if (m.property != null) {
@@ -538,11 +537,11 @@ public class TipManager : MonoBehaviour {
 				makingTipText [i].alignment = TextAnchor.MiddleCenter;
 			}
 		} else {
-			makingTipText [i].text = "无法直接使用。";
+			makingTipText [i].text = "Can not use directly.";
 			makingTipText [i].alignment = TextAnchor.MiddleCenter;
 			i++;
 		}
-		makingTipText [i].text = "原料:";
+		makingTipText [i].text = "Requirement:";
 		makingTipText [i].color = new Color (24f / 255f, 193f / 255f, 172f / 255f, 1f);
 		makingTipText [i].alignment = TextAnchor.MiddleLeft;
 		i++;
@@ -559,7 +558,7 @@ public class TipManager : MonoBehaviour {
 			i++;
 		}
 		float discount = (m.makingType == "Kitchen") ? GameData._playerData.CookingTimeDiscount : GameData._playerData.BlackSmithTimeDiscount;
-		makingTipText [i].text = "耗时: "+GetTime (m.makingTime * discount);
+		makingTipText [i].text = "Time: "+GetTime (m.makingTime * discount);
 		makingTipText [i].color = new Color (24f / 255f, 193f / 255f, 172f / 255f, 1f);
 		makingTipText [i].alignment = TextAnchor.MiddleLeft;
 	}
@@ -580,7 +579,7 @@ public class TipManager : MonoBehaviour {
 		int targetId = int.Parse (makingTipButton [1].gameObject.name);
 		foreach (int key in LoadTxt.MatDic[targetId].combReq.Keys) {
 			if (_gameData.CountInHome (key) < LoadTxt.MatDic [targetId].combReq [key]) {
-				_floating.CallInFloating ("材料不足！", 1);
+				_floating.CallInFloating ("Insufficient Material!", 1);
 				return;
 			}
 			_gameData.ConsumeItemInHome (key, LoadTxt.MatDic [targetId].combReq [key]);
@@ -652,8 +651,8 @@ public class TipManager : MonoBehaviour {
 		ClearTechTipTexts ();
 		Technique t = LoadTxt.GetTech (techId);
 		techTipText [0].text = t.name;
-		techTipButton[0].gameObject.GetComponentInChildren<Text>().text ="取消"; 
-		techTipButton[1].gameObject.GetComponentInChildren<Text>().text ="研究"; 
+		techTipButton[0].gameObject.GetComponentInChildren<Text>().text ="Cancel"; 
+		techTipButton[1].gameObject.GetComponentInChildren<Text>().text ="Study"; 
 		techTipButton [1].interactable = CheckReq (t.req);
 		techTipButton [1].gameObject.name = techId.ToString ();
 		SetTechTipDesc (t);
@@ -715,8 +714,8 @@ public class TipManager : MonoBehaviour {
 			_gameData.ConsumeItemInHome (key, t.req [key]);
 		}
 		MoveTechTipPanel ();
-		_floating.CallInFloating ("已经完成 "+t.name + " 的研究!", 0);
-        _logManager.AddLog("已经完成 " + t.name + " 的研究!",true);
+		_floating.CallInFloating (t.name + " Completed!", 0);
+		_logManager.AddLog(t.name + " Completed!",true);
 		LearntTech (t);
 		_studyActions.UpdateStudy();
 
@@ -818,7 +817,7 @@ public class TipManager : MonoBehaviour {
 				i++;
 			}
 		} else {
-			commonTipText[i].text = "无法直接使用。";
+			commonTipText[i].text = "Can not use directly.";
 			commonTipText [i].color = Color.white;
 			i++;
 		}
@@ -867,34 +866,34 @@ public class TipManager : MonoBehaviour {
 			}
 		}
 
-		commonTipButton [0].gameObject.GetComponentInChildren<Text> ().text = "献祭";
+		commonTipButton [0].gameObject.GetComponentInChildren<Text> ().text = "Pray";
 		commonTipButton [1].gameObject.SetActive (true);
-		commonTipButton[2].gameObject.GetComponentInChildren<Text>().text="取消";
+		commonTipButton[2].gameObject.GetComponentInChildren<Text>().text="Cancel";
 		commonTipButton [2].gameObject.SetActive (true);
 		switch (type) {
             case 0:
                 commonTipButton[0].gameObject.SetActive(true);
                 commonTipButton[0].gameObject.name = "warehouse_warehouse|" + itemId;
-                commonTipButton[1].gameObject.GetComponentInChildren<Text>().text = "取出";
+                commonTipButton[1].gameObject.GetComponentInChildren<Text>().text = "Withdraw";
                 commonTipButton[1].interactable = true;
 			break;
             case 1:
                 commonTipButton[0].gameObject.SetActive(true);
                 commonTipButton[0].gameObject.name = "warehouse_backpack|" + itemId;
-                commonTipButton[1].gameObject.GetComponentInChildren<Text>().text = "存放";
+                commonTipButton[1].gameObject.GetComponentInChildren<Text>().text = "Store";
                 commonTipButton[1].interactable = true;
 			break;
             case 2:
                 commonTipButton[0].gameObject.SetActive(true);
                 commonTipButton[0].gameObject.name = "backpack_backpack|" + itemId;
-                commonTipButton[1].gameObject.GetComponentInChildren<Text>().text = "使用";
+                commonTipButton[1].gameObject.GetComponentInChildren<Text>().text = "Use";
                 bool canUse = !(m.property == null);
                 commonTipButton[1].interactable = canUse;
 			break;
             case 3:
             case 4:
                 commonTipButton[0].gameObject.SetActive(false);
-                commonTipButton[1].gameObject.GetComponentInChildren<Text>().text = "卸下";
+                commonTipButton[1].gameObject.GetComponentInChildren<Text>().text = "TakeOff";
                 commonTipButton[1].interactable = true;
 			break;
             default:
@@ -909,9 +908,9 @@ public class TipManager : MonoBehaviour {
 		ShowTipPanel ();
 		ClearCommonTipTexts ();
 		commonTipText [0].text = m.name;
-		commonTipText[1].text = "宠物";
-		commonTipText [4].text = "警戒值: " + m.alertness;
-		commonTipText [4].text = "速度: " + m.speed;
+		commonTipText[1].text = "Pet";
+		commonTipText [4].text = "Alert: " + m.alertness;
+		commonTipText [4].text = "Speed: " + m.speed;
 		commonTipButton [0].gameObject.SetActive (false);
 		commonTipButton [1].gameObject.SetActive (false);
 	}
@@ -980,7 +979,7 @@ public class TipManager : MonoBehaviour {
 			_backpackActions.UpdataPanel ();
 		}
 
-		_floating.CallInFloating ("祭祀印记 +" + price, 0);
+		_floating.CallInFloating ("Pray Mark +" + price, 0);
 		OnNormalTipCover ();
 	}
 
@@ -989,36 +988,36 @@ public class TipManager : MonoBehaviour {
 		int itemId = int.Parse (commonTipButton [1].gameObject.name);
 		int equipType = LoadTxt.MatDic [(int)(itemId / 10000)].type;
 		switch (actionType) {
-        case "取出":
+        case "Withdraw":
 			if (GameData._playerData.bp.Count >= GameData._playerData.bpNum && !GameData._playerData.bp.ContainsKey(itemId))
             {
-                _floating.CallInFloating("背包已满", 1);
+                _floating.CallInFloating("Backpack is FULL!", 1);
                 return;
             }
 			_gameData.WithdrawItem (itemId);
 			_warehouseActions.UpdatePanel ();
 			MoveCommonTipPanel ();
 			break;
-        case "存放":
+        case "Store":
 			if ((GameData._playerData.wh.Count >= (GameConfigs.warehouseMin + GameConfigs.warehouseAdd * (GameData._playerData.WarehouseOpen-1))) && !GameData._playerData.wh.ContainsKey(itemId))
             {
-                _floating.CallInFloating("仓库已满", 1);
+                _floating.CallInFloating("Warehouse is FULL!", 1);
                 return;
             }
 			_gameData.StoreItem (itemId);
 			_warehouseActions.UpdatePanel ();
 			MoveCommonTipPanel ();
 			break;
-		case "卸下":
+		case "TakeOff":
             if (GameData._playerData.bp.Count >= GameData._playerData.bpNum)
             {
-                _floating.CallInFloating("背包已满", 1);
+                _floating.CallInFloating("Backpack is FULL!", 1);
                 return;
             }
 			TakeOffEquip (equipType);
 			MoveCommonTipPanel ();
 			break;
-		case "使用":
+		case "Use":
 			UseItem (itemId);
 			break;
 		default:
@@ -1041,7 +1040,7 @@ public class TipManager : MonoBehaviour {
 
 		switch (m.type) {
 		case 0:
-			_floating.CallInFloating("该物品无法直接使用!",1);
+			_floating.CallInFloating("Can not use directly!",1);
 			break;
         case 2:
             _gameData.EatFood(itemId);

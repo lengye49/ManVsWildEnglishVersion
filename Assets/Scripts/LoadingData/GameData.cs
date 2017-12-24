@@ -468,20 +468,20 @@ public class GameData : MonoBehaviour {
     }
 
 	void ChangeDay(){
-		string txt = "第" + _playerData.dayNow + "天开始了，加油！";
+		string txt = "Day " + _playerData.dayNow + " started.";
 		_logManager.AddLog (txt);
 
         if (_playerData.dayNow == 20)
         {
-            _logManager.AddLog("随着你的居住地的发展，渐渐引起了附近盗贼的注意。");
-            _logManager.AddLog("请严加防范，安排宠物看守房屋或者升级科技都可以有效减少盗贼的入侵损失。");
+            _logManager.AddLog("Be careful, the thieves will come while you are away.");
+            _logManager.AddLog("Arrange guards and upgrade techs to reduce your loss.");
         }
         GetDailyTribute();
 
 		if (_playerData.dayNow % 3 == 0) {
 			StoreMemmory ();
 			UpdateSacrificeList ();
-			_logManager.AddLog ("已更新存档，祭品已更新", true);
+			_logManager.AddLog ("Memmory saved, Sacrifice updated.", true);
 		}
 	}
 
@@ -498,16 +498,16 @@ public class GameData : MonoBehaviour {
 		string s = "";
 		switch (_playerData.seasonNow) {
 		case 0:
-			s += "春天来了,气候变暖。";
+			s += "Spring comes, it's getting warmer.";
 			break;
 		case 1:
-			s += "夏天来了，天气炎热，请注意防暑降温。";
+			s += "Summer comes, it's hot, Be careful.";
 			break;
 		case 2:
-			s += "秋天来了，气候转凉。";
+			s += "Autumn comes, it's getting cooler.";
 			break;
 		case 3:
-			s += "冬天来了，天气寒冷，请注意取暖。";
+			s += "Winter comes, it's cold, Be careful.";
 			break;
 		default:
 			break;
@@ -533,8 +533,7 @@ public class GameData : MonoBehaviour {
 			_headUiManager.UpdateHeadUI ("hpNow");
 
 			if (lastProp > _playerData.HpMax * 0.3f && _playerData.hpNow <= _playerData.HpMax * 0.3f) {
-				_logManager.AddLog ("你当前的[生命值]较低，生命值过低会流血致死。");
-				_logManager.AddLog (1f, "可以使用食物增加生命值。");
+				_logManager.AddLog ("You life is low, Be careful!!!");
 			}
                 
 			if (_playerData.hpNow <= 0) {
@@ -560,8 +559,7 @@ public class GameData : MonoBehaviour {
 
             if (lastProp > _playerData.SpiritMax * 0.3f && _playerData.spiritNow <= _playerData.SpiritMax * 0.3f)
             {
-                _logManager.AddLog("你当前的[精神]较低，精神过低时会精神失常。");
-                _logManager.AddLog(1f, "可以通过睡觉、饮酒等提高精神。");
+                _logManager.AddLog("Your spirit is low, Be careful!!!");
             }
             
             if (_playerData.spiritNow <= 0)
@@ -587,8 +585,7 @@ public class GameData : MonoBehaviour {
 
             if (lastProp > _playerData.FoodMax * 0.3f && _playerData.foodNow <= _playerData.FoodMax * 0.3f)
             {
-                _logManager.AddLog("你当前的[饱腹值]较低，饱腹值过低时会饿死。");
-                _logManager.AddLog(1f, "可以使用食物增加饱腹值。");
+                _logManager.AddLog("Your food is low, Be careful!!!");
             }
 
             if (_playerData.foodNow <= 0)
@@ -614,8 +611,7 @@ public class GameData : MonoBehaviour {
 
             if (lastProp > _playerData.WaterMax * 0.3f && _playerData.waterNow <= _playerData.WaterMax * 0.3f)
             {
-                _logManager.AddLog("你当前的[水分]较低，水分过低会导致脱水死亡。");
-                _logManager.AddLog(1f, "可以通过喝水、饮料等增加水分。");
+                _logManager.AddLog("Your water is low, Be careful!!!");
             }
                 
             if (_playerData.waterNow <= 0)
@@ -639,11 +635,6 @@ public class GameData : MonoBehaviour {
             _headUiManager.UpdateHeadUI("strengthNow");
             UpdateProperty(8, _playerData.strengthNow);
 
-//            if (lastProp > _playerData.StrengthMax * 0.3f && _playerData.strengthNow <= _playerData.StrengthMax * 0.3f)
-//            {
-//                _logManager.AddLog("你当前的[力量]较低，力量过低时无法进行采集活动。");
-//                _logManager.AddLog(1f, "可以通过休息恢复力量。");
-//            }
 			break;
 		case 9:
 			_playerData.StrengthMax += value;
@@ -684,13 +675,11 @@ public class GameData : MonoBehaviour {
 			UpdateProperty (10, _playerData.tempNow);
 
             if (lastTemp < (_playerData.property [12] -15) && _playerData.tempNow >= (_playerData.property [12] -15)) {
-				_logManager.AddLog ("你当前体温过高，高温极限为" + _playerData.property [12] + "℃。");
-				_logManager.AddLog (1f, "可以通过喝冰水、洗澡等降低体温。");
+				_logManager.AddLog ("Your Temp. is too high, Pls keep Temp.<" + _playerData.property [12] + "℃。");
 			}
 
             if (lastTemp > (_playerData.property [11] +15) && _playerData.tempNow <= (_playerData.property [11] +15)) {
-				_logManager.AddLog ("你当前体温过低，低温极限为" + _playerData.property [11] + "℃。");
-				_logManager.AddLog (1f, "可以通过使用火把、喝酒等提高体温。");
+				_logManager.AddLog ("Your Temp. is too low, Pls keep Temp.>" + _playerData.property [11] + "℃。");
 			}
 
 			if (_playerData.tempNow > _playerData.property [12]) {
@@ -726,8 +715,8 @@ public class GameData : MonoBehaviour {
         {
             if (_playerData.bpNum <= _playerData.bp.Count)
             {
-                GetComponentInChildren<FloatingActions>().CallInFloating("背包已满！", 1);
-                _logManager.AddLog("你的背包满了，无法获得新物品。");
+                GetComponentInChildren<FloatingActions>().CallInFloating("Backpack is FULL!", 1);
+				_logManager.AddLog("Backpack is FULL!");
             }
             else
             {
@@ -1418,8 +1407,8 @@ public class GameData : MonoBehaviour {
         GameData._playerData.MapOpenState[mapId] = 1;
         StoreData("MapOpenState", GetStrFromMapOpenState(_playerData.MapOpenState));
 
-		_logManager.AddLog("你发现了新地点：" + LoadTxt.MapDic[mapId].name,true);
-        GetComponentInChildren<FloatingActions>().CallInFloating("你发现了新地点：" + LoadTxt.MapDic[mapId].name, 0);
+		_logManager.AddLog("New place:" + LoadTxt.MapDic[mapId].name,true);
+		GetComponentInChildren<FloatingActions>().CallInFloating("New place:" + LoadTxt.MapDic[mapId].name, 0);
 
         //Achievement
         this.gameObject.GetComponentInParent<AchieveActions>().NewPlaceFind();
@@ -1455,34 +1444,34 @@ public class GameData : MonoBehaviour {
 
 		if (d == 3 && _playerData.WarehouseOpen==1) {
 			StoreItem (34020000, 5);//空间宝石
-			_logManager.AddLog( "小镇居民送来了一些材料。");
-			_logManager.AddLog( "空间宝石+5 已放入仓库。");
+			_logManager.AddLog( "Townsfolks deliver supplies to you.");
+			_logManager.AddLog( "Space Gem +5");
 		}
 		if (d == 5 && _playerData.WarehouseOpen==1) {
 			StoreItem (41000000, 10);
 			StoreItem (42000000, 10);
-			_logManager.AddLog( "镇长希望你能够照顾好自己后，多去闯荡。  镇子很小，世界很大。");
-			_logManager.AddLog( "水+10，馒头+10 已放入仓库。");
+			_logManager.AddLog( "The Mayor deliver supplies to you.");
+			_logManager.AddLog( "Water +10，Bread +10");
 		}
 		if (d == 20 && _playerData.WarehouseOpen==1) {
 			StoreItem (34020000, 5);//空间宝石
-			_logManager.AddLog( "小镇居民送来了一些材料。");
-			_logManager.AddLog( "空间宝石+5 已放入仓库。");
+			_logManager.AddLog( "The Mayor deliver supplies to you。");
+			_logManager.AddLog( "Space Gem +5");
 		}
 		if (d == 7 && _playerData.WarehouseOpen==1) {
 			StoreItem (33020000, 5);//空间宝石
-			_logManager.AddLog( "镇长送来了他笔记，里面记录了一些实战经验。");
-			_logManager.AddLog( "战士训练手册+5 已放入仓库。");
+			_logManager.AddLog( "The Mayor gives you his notes.");
+			_logManager.AddLog( "Warrior Manual +5");
 		}
 		if (d == 14 && _playerData.WarehouseOpen==1) {
 			StoreItem (33040000, 5);//空间宝石
-            _logManager.AddLog( "镇长送来了他笔记，里面记录了一些实战经验。");
-			_logManager.AddLog( "射术精要+5 已放入仓库。");
+			_logManager.AddLog( "The Mayor gives you his notes.");
+			_logManager.AddLog( "Archery Essence +5");
 		}
 
 		//进贡前的提醒
 		if (d % 30 == 28)
-			_logManager.AddLog ("镇上的居民将在3天后送来补给，请保证仓库有>5空位。");
+			_logManager.AddLog ("Supply will be delivered in 3 days.");
 	}
 
 	/// <summary>
@@ -1495,13 +1484,13 @@ public class GameData : MonoBehaviour {
 		if (r < 9) {
 			dic.Add (41000000, 20);//水
 			dic.Add (42000000, 20);//面包
-			s = "镇长派人给你送来了一些补给。";
+			s = "The mayor delivered supplies.";
 		} else if (r < 99) {
 			dic.Add (41000000, 20);//水
 			dic.Add (42000000, 20);//面包
 			dic.Add (33020000, 10);//战士训练手册
 			dic.Add (33040000, 10);//射术精要
-			s = "你的大名已经传遍小镇，居民给你送来了一些补给。";
+			s = "You're famous, Townsfolks deliver supplies to you.\"";
 		} else {
 			//根据季节进行区分
 			if (_playerData.seasonNow == 0 || _playerData.seasonNow == 2) {
@@ -1517,7 +1506,7 @@ public class GameData : MonoBehaviour {
 				dic.Add (42020000, 30);//冰块
 				dic.Add (43000000, 20);//鸡尾酒
 			}
-			s = "小镇居民对你非常仰慕，给你送来了补给。";
+			s = "Townsfolks love you and they deliver supplies to you.";
 		}
 		_logManager.AddLog (s);
 		s = "";
@@ -1526,7 +1515,6 @@ public class GameData : MonoBehaviour {
 			s += LoadTxt.MatDic [key / 10000].name + "+" + dic [key] + ",";
 		}
 		s = s.Substring (0, s.Length - 1);
-		s += " 已放入仓库";
 		_logManager.AddLog (s);
 	}
 
@@ -1536,9 +1524,9 @@ public class GameData : MonoBehaviour {
 	public void GetFirstTribute(){
 		StoreItem (41000000, 30);
 		StoreItem (41010000, 50);
-		string s = "附近的居民非常友善，他们热情的欢迎你，";
+		string s = "You are welcomed by the townsfolks,";
 		_logManager.AddLog (1f,s);
-		s = "送来 水+30，小麦+50 已放入你的仓库。";
+		s = "They delivered Water +30，Wheat+50 to your warehouse.";
 		_logManager.AddLog (2f,s);
 	}
 #endregion

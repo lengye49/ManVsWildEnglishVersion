@@ -13,7 +13,7 @@ public class LoadingBar : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		loadingBar = this.gameObject.GetComponent<Slider> ();
-		loadingTxt = "进行中";
+		loadingTxt = "In Progress";
 		loadingText = this.gameObject.GetComponentInChildren<Text> ();
 	}
 
@@ -29,13 +29,13 @@ public class LoadingBar : MonoBehaviour {
 	void StartLoading(){
 		value = value + 0.03f;
 		if ((int)(value * 10) % 4 == 0) {
-			loadingTxt = "进行中";
+			loadingTxt = "In Progress";
 		}else if((int)(value * 10) % 4 == 1){
-			loadingTxt = "进行中.";
+			loadingTxt = "In Progress.";
 		}else if((int)(value * 10) % 4 == 2){
-			loadingTxt = "进行中..";
+			loadingTxt = "In Progress..";
 		}else{
-			loadingTxt = "进行中...";
+			loadingTxt = "In Progress...";
 		}
         loadingBar.value = value * 2f;
 		loadingText.text = loadingTxt;

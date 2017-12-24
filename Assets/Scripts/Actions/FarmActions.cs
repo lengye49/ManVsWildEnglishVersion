@@ -73,50 +73,50 @@ public class FarmActions : MonoBehaviour {
 		Plants p = LoadTxt.GetPlant (f.plantType);
 
 		if (f.plantType==0)
-			t[0].text = "农田";
+			t[0].text = "Farm";
 		else
-			t[0].text = "酒窖";
+			t[0].text = "Wine Cellar";
 
 		if (f.plantTime <= 0) {
-			t [1].text = "(闲置)";
+			t [1].text = "(Empty)";
 			t [1].color = Color.grey;
 			if (f.plantType == 0)
-				t [2].text = "可在此种植作物。";
+				t [2].text = "Grow crops here.";
 			else if (f.plantType == 1)
-				t [2].text = "可在此酿造果酒";
+				t [2].text = "Make wine here.";
 			else if (f.plantType == 2)
-				t [2].text = "可在此酿造啤酒";
+				t [2].text = "Make beer here.";
 			else if (f.plantType == 3)
-				t [2].text = "可在此酿造威士忌";
+				t [2].text = "Make whiskey here.";
 			else
 				Debug.Log ("wrong plantType!!");
 			b.interactable = true;
 			b.name = key.ToString()+"|Prepare";
-			t [3].text = "准备";
+			t [3].text = "Prepare";
 		} else {
 			bool isMature = IsMature (f.plantTime, p);
-			t [1].text = isMature ? "(收获)" : "(等待)";
+			t [1].text = isMature ? "(Collect)" : "(Wait)";
 			t [1].color = isMature ? Color.green : Color.black;
 			if (isMature) {
 				if (f.plantType == 0)
-					t [2].text = "作物已经成熟。";
+					t [2].text = "Crops are ready.";
 				else if (f.plantType == 1)
-					t [2].text = "果酒已经酿制完成。";
+					t [2].text = "Wine is ready.";
 				else if (f.plantType == 2)
-					t [2].text = "啤酒已经酿制完成。";
+					t [2].text = "Beer is ready.";
 				else if (f.plantType == 3)
-					t [2].text = "威士忌已经酿制完成。";
+					t [2].text = "Whiskey is ready.";
 				else
 					Debug.Log ("wrong plantType!!");
 
 				b .interactable = true;
 				b.name = key.ToString()+"|Charge";
-				t [3].text = "收获";
+				t [3].text = "Collect";
 			} else {
-				t [2].text = "剩余时间 : " + GetLeftTime (f.plantTime, p);
+				t [2].text = "Time: " + GetLeftTime (f.plantTime, p);
 				b .interactable = false;
 				b .name = key.ToString()+"|Charge";
-				t [3].text = "收获";
+				t [3].text = "Collect";
 			}
 		}
 	}
@@ -129,11 +129,11 @@ public class FarmActions : MonoBehaviour {
 		int t1 = t + p.plantGrowCycle * 24 * 60;
 		int t2 = t1 - GameData._playerData.minutesPassed;
 		if (t2 >= 24 * 60)
-			return (int)((t2) / 60 / 24) + " 天";
+			return (int)((t2) / 60 / 24) + " day";
 		else {
 			int h = (int)(t2 / 60);
 			int m = t2 - 60 * h;
-			return h + " 时" + m + " 分";
+			return h + " h" + m + " min";
 		}
 	}
 
@@ -183,16 +183,16 @@ public class FarmActions : MonoBehaviour {
 
 		switch (plantType) {
 		case 0:
-			t [0].text = "作物";
+			t [0].text = "Crops";
 			break;
 		case 1:
-			t [0].text = "果酒";
+			t [0].text = "Wine";
 			break;
 		case 2:
-			t [0].text = "啤酒";
+			t [0].text = "Beer";
 			break;
 		case 3:
-			t [0].text = "威士忌";
+			t [0].text = "Whiskey";
 			break;
 		default:
 			break;
@@ -216,9 +216,9 @@ public class FarmActions : MonoBehaviour {
         }
         plantingTip.GetComponentInChildren<Button>().interactable = canPrepare;
 
-		t[5].text= p.plantTime + " 时";
-		t[7].text = p.plantGrowCycle + " 天";
-		t[8].text= "准备";
+		t[5].text= p.plantTime + " h";
+		t[7].text = p.plantGrowCycle + " day";
+		t[8].text= "Prepare";
 	}
 
 	public void Prepare(){

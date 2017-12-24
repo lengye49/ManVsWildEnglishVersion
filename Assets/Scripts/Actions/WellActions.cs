@@ -13,14 +13,14 @@ public class WellActions : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		waterPerDay.text = "(" + (int)(GameConfigs.WaterInWellPerDay * GameData._playerData.WaterCollectingRate) + "/天):";
+		waterPerDay.text = "(" + (int)(GameConfigs.WaterInWellPerDay * GameData._playerData.WaterCollectingRate) + "/day):";
 		waterStoreMax.text = "/" + GameConfigs.WaterStoreMax.ToString ();
 		_gameData = this.gameObject.GetComponentInParent<GameData> ();
 	}
 	
 	public void UpdateWell(){
 		int min = (GameData._playerData.minutesPassed - GameData._playerData.LastWithdrawWaterTime);
-		waterPerDay.text = "(" + (int)(GameConfigs.WaterInWellPerDay * GameData._playerData.WaterCollectingRate) + "/天):";
+		waterPerDay.text = "(" + (int)(GameConfigs.WaterInWellPerDay * GameData._playerData.WaterCollectingRate) + "/day):";
 		waterStoreNow = (int)(min / 60 / 24 * GameConfigs.WaterInWellPerDay * GameData._playerData.WaterCollectingRate);
 		waterStoreNow = (waterStoreNow < 0) ? 0 : waterStoreNow;
 		waterStoreNow = (waterStoreNow > GameConfigs.WaterStoreMax) ? GameConfigs.WaterStoreMax : waterStoreNow;

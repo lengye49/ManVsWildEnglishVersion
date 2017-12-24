@@ -18,25 +18,25 @@ public class DeathActions : MonoBehaviour {
 
 		switch (cause) {
 		case "Spirit":
-			TypeWritter ("    很遗憾，你在探险过程中死于[精神失常]。 \n战斗中释放魔法会降低精神，可以通过休息，饮酒等提高精神。");
+			TypeWritter ("You died of low spirit.");
 			break;
 		case "Food":
-			TypeWritter ("    很遗憾，你在探险过程中死于[过度饥饿]。 \n饱腹度会随着时间的积累而降低。可以通过进食提高饱腹度。");
+			TypeWritter ("Your died of hunger.");
 			break;
 		case "Water":
-			TypeWritter ("    很遗憾，你在探险过程中死于[身体脱水]。 \n身体水分会随着时间的积累而降低。可以通过喝水、饮料等提高身体的水分。");
+			TypeWritter ("You died of dehydration.");
 			break;
 		case "Cold":
-			TypeWritter ("    很遗憾，你在探险过程中死于[炎热]。 \n体温会随着时间的变动而降低，夏季会降低的更快。可以通过洗澡、喝冰水等降低体温。");
+			TypeWritter ("You died of cold.");
 			break;
 		case "Hot":
-			TypeWritter ("    很遗憾，你在探险过程中死于[寒冷]。 \n体温会随着时间的变动而降低，冬季会降低的更快。可以通过点火把、饮酒等提高体温。");
+			TypeWritter ("You died of hot.");
 			break;
         case "Hp":
-			TypeWritter ("    很遗憾，你在探险过程中死于[生命值过低]。 \n不要尝试挑战过于强大的对手，进入战斗前先调整到最佳状态。战斗结束后可以通过进食提高生命值。");
+			TypeWritter ("You died of low hp.");
             break;
 		default:
-			TypeWritter ("    很遗憾，你在探险过程中死于[生命值过低]。 \n不要尝试挑战过于强大的对手，进入战斗前先调整到最佳状态。战斗结束后可以通过进食提高生命值。");
+			TypeWritter ("You died of low hp.");
 			break;
 		}
 			

@@ -152,7 +152,7 @@ public class HeadUiManager : MonoBehaviour {
 
 	string GetDate(){
 		string s = "";
-		s = "第" + GameData._playerData.dayNow + "天";
+		s = "Day " + GameData._playerData.dayNow;
 
 		return s;
 	}
@@ -162,19 +162,19 @@ public class HeadUiManager : MonoBehaviour {
 		Color c = new Color();
 		switch (GameData._playerData.seasonNow) {
 		case 0:
-			s += "春";
+			s += "Spring";
 			c = Color.green;
 			break;
 		case 1:
-			s += "夏";
+			s += "Autumn";
 			c = Color.red;
 			break;
 		case 2:
-			s += "秋";
+			s += "Autumn";
 			c = Color.yellow;
 			break;
 		case 3:
-			s += "冬";
+			s += "Winter";
 			c = Color.white;
 			break;
 		default:
@@ -186,34 +186,34 @@ public class HeadUiManager : MonoBehaviour {
 
 	string GetTime(){
 		string s = "";
-		s += GameData._playerData.hourNow >= 12 ? "下午 " : "上午 ";
 		s += (GameData._playerData.hourNow > 9 ? "" : "0") + GameData._playerData.hourNow.ToString () + ":";
 		s += (GameData._playerData.minuteNow > 9 ? "" : "0") + GameData._playerData.minuteNow.ToString ();
+		s += GameData._playerData.hourNow >= 12 ? "am" : "pm";
 		return s;
 	}
 
 	public void OnProperty(string pName){
 		switch (pName) {
 		case "hp":
-			_log.AddLog ("生命值，生存属性。");
+			_log.AddLog ("Hp, Can not below 0.");
 			break;
 		case "spirit":
-			_log.AddLog ("精神，生存属性；施法媒介；影响命中。");
+			_log.AddLog ("Spirit, affect hit. Can not below 0.");
 			break;
 		case "food":
-			_log.AddLog ("饱腹值，生存属性，会随时间降低。");
+			_log.AddLog ("Food,Can not below 0.");
 			break;
 		case "water":
-			_log.AddLog ("水分，生存属性，会随时间降低。");
+			_log.AddLog ("Water, Can not below 0.");
 			break;
 		case "strength":
-			_log.AddLog ("体力，采集活动需要体力才能进行。");
+			_log.AddLog ("Energy");
 			break;
 		case "temp":
-			_log.AddLog ("体温，生存属性，-30℃~50℃。");
+			_log.AddLog ("Temperature,-30℃~50℃.");
 			break;
 		case "time":
-			_log.AddLog ("已存活天数和当前时间。");
+			_log.AddLog ("Day and time.");
 			break;
 		default:
 			break;
