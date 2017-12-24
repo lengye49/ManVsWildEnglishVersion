@@ -73,7 +73,7 @@ public class TipManager : MonoBehaviour {
 		Building b = new Building ();
 		switch (buildingName) {
 		case "BedRoom":
-			b = LoadTxt.GetBuilding ("BedRoom", GameData._playerData.BedRoomOpen + 1);
+			b = LoadTxt.GetBuilding ("Bedroom", GameData._playerData.BedRoomOpen + 1);
 			break;
 		case "Warehouse":
 			b = LoadTxt.GetBuilding ("Warehouse", GameData._playerData.WarehouseOpen + 1);
@@ -91,7 +91,7 @@ public class TipManager : MonoBehaviour {
 			b = LoadTxt.GetBuilding ("Study", GameData._playerData.StudyOpen + 1);
 			break;
 		case "Farm":
-			b = LoadTxt.GetBuilding ("农田", GameData._playerData.FarmOpen + 1);
+			b = LoadTxt.GetBuilding ("Farm", GameData._playerData.FarmOpen + 1);
 			break;
 		case "Pets":
 			b = LoadTxt.GetBuilding ("Pets", GameData._playerData.PetsOpen + 1);
