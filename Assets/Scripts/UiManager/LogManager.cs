@@ -4,6 +4,7 @@ using System.Collections;
 
 public class LogManager : MonoBehaviour {
 	private Text[] logs;
+	private int cNum = 35;
 
 	void Start(){
 		logs = this.gameObject.GetComponentsInChildren<Text> ();
@@ -43,9 +44,9 @@ public class LogManager : MonoBehaviour {
 	}
 
 	public void AddLog(string s){
-		if (s.Length > 20) {
-			string s1 = s.Substring (0, 20);
-			string s2 = s.Substring (20, s.Length - 20);
+		if (s.Length > cNum) {
+			string s1 = s.Substring (0, cNum);
+			string s2 = s.Substring (cNum, s.Length - cNum);
 			AddNewLog (s1,false);
 			AddNewLog (s2,false);
 		} else
@@ -54,9 +55,9 @@ public class LogManager : MonoBehaviour {
 
 
 	public void AddLog(string s,bool isGreen){
-		if (s.Length > 20) {
-			string s1 = s.Substring (0, 20);
-			string s2 = s.Substring (20, s.Length - 20);
+		if (s.Length > cNum) {
+			string s1 = s.Substring (0, cNum);
+			string s2 = s.Substring (cNum, s.Length - cNum);
 			AddNewLog (s1,isGreen);
 			AddNewLog (s2,isGreen);
 		} else

@@ -1444,28 +1444,28 @@ public class GameData : MonoBehaviour {
 
 		if (d == 3 && _playerData.WarehouseOpen==1) {
 			StoreItem (34020000, 5);//空间宝石
-			_logManager.AddLog( "Townsfolks deliver supplies to you.");
+			_logManager.AddLog( "Townsfolks sent supplies to you.");
 			_logManager.AddLog( "Space Gem +5");
 		}
 		if (d == 5 && _playerData.WarehouseOpen==1) {
 			StoreItem (41000000, 10);
 			StoreItem (42000000, 10);
-			_logManager.AddLog( "The Mayor deliver supplies to you.");
+			_logManager.AddLog( "The Mayor sent supplies to you.");
 			_logManager.AddLog( "Water +10，Bread +10");
 		}
 		if (d == 20 && _playerData.WarehouseOpen==1) {
 			StoreItem (34020000, 5);//空间宝石
-			_logManager.AddLog( "The Mayor deliver supplies to you。");
+			_logManager.AddLog( "The Mayor sent supplies to you。");
 			_logManager.AddLog( "Space Gem +5");
 		}
 		if (d == 7 && _playerData.WarehouseOpen==1) {
 			StoreItem (33020000, 5);//空间宝石
-			_logManager.AddLog( "The Mayor gives you his notes.");
+			_logManager.AddLog( "The Mayor sendt you his notes.");
 			_logManager.AddLog( "Warrior Manual +5");
 		}
 		if (d == 14 && _playerData.WarehouseOpen==1) {
 			StoreItem (33040000, 5);//空间宝石
-			_logManager.AddLog( "The Mayor gives you his notes.");
+			_logManager.AddLog( "The Mayor sent you his notes.");
 			_logManager.AddLog( "Archery Essence +5");
 		}
 
@@ -1484,13 +1484,13 @@ public class GameData : MonoBehaviour {
 		if (r < 9) {
 			dic.Add (41000000, 20);//水
 			dic.Add (42000000, 20);//面包
-			s = "The mayor delivered supplies.";
+			s = "The mayor sent supplies.";
 		} else if (r < 99) {
 			dic.Add (41000000, 20);//水
 			dic.Add (42000000, 20);//面包
 			dic.Add (33020000, 10);//战士训练手册
 			dic.Add (33040000, 10);//射术精要
-			s = "You're famous, Townsfolks deliver supplies to you.\"";
+			s = "You're famous, Townsfolks delivered supplies to you.\"";
 		} else {
 			//根据季节进行区分
 			if (_playerData.seasonNow == 0 || _playerData.seasonNow == 2) {
@@ -1506,7 +1506,7 @@ public class GameData : MonoBehaviour {
 				dic.Add (42020000, 30);//冰块
 				dic.Add (43000000, 20);//鸡尾酒
 			}
-			s = "Townsfolks love you and they deliver supplies to you.";
+			s = "Townsfolks love you and they delivered supplies to you.";
 		}
 		_logManager.AddLog (s);
 		s = "";

@@ -198,7 +198,7 @@ public class HeadUiManager : MonoBehaviour {
 			_log.AddLog ("Hp, Can not below 0.");
 			break;
 		case "spirit":
-			_log.AddLog ("Spirit, affect hit. Can not below 0.");
+			_log.AddLog ("Spirit, Can not below 0.");
 			break;
 		case "food":
 			_log.AddLog ("Food,Can not below 0.");

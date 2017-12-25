@@ -17,7 +17,7 @@ id,name,maxLv,req,tips,timeCost
 1,Workshop,3,1101|30,A small stone workbench.,3
 2,Workshop,3,2200|30;2201|30,Upgrade your workshop.,8
 3,Workshop,3,2300|30;2301|30,Upgrade your workshop.,15
-1,Technology,1,1100|50;1101|50,A place for research.,5
+1,Study,1,1100|50;1101|50,A place for research.,5
 1,Farm,4,3102|20;4100|20,Farmland for growing crops and making wine.,10
 2,Farm,4,3102|20;4100|20,Increase 1 farmland.,10
 3,Farm,4,3102|20;4100|20,Increase 1 farmland.,10
