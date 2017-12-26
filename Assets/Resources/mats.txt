@@ -119,7 +119,7 @@ id,type,name,desc,price,property,req,needBlueprint,makingType,timeCost,castHp,Ta
 3202,0,Transfer the key Lv.40,1,0,,,0,none,0,0,特殊物品,0,2,Nothing
 3302,0,Warrior Manual,1,1000,,,0,none,0,0,特殊物品,0,2,Study and exercise.
 3304,0,Archery Essence,1,1000,,,0,none,0,0,特殊物品,0,2,Study and exercise.
-3305,0,Introduction to Wizard,1,1000,,,0,none,0,0,特殊物品,0,2,Study and exercise.
+3305,0,Intro to Wizard,1,1000,,,0,none,0,0,特殊物品,0,2,Study and exercise.
 3309,0,Transfer the key Lv.50,1,0,,,0,none,0,0,特殊物品,0,3,Nothing
 3310,0,Transfer the key Lv.60,1,0,,,0,none,0,0,特殊物品,0,3,Nothing
 3401,0,Transfer stone,1,0,,,0,none,0,0,特殊物品,0,2,Nothing

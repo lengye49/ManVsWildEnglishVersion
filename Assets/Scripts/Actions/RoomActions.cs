@@ -76,7 +76,7 @@ public class RoomActions : MonoBehaviour {
 
 	void SetNormalBathState(){
 		bathMatText.text = "Water ×" + GameConfigs.WaterForBath;
-		normalBathRecoverText.text = "Temp. -" + GameConfigs.TempRecoverPerNormalBath + "℃, Spirit +" + GameConfigs.SpiritRecoverPerBath+".";
+		normalBathRecoverText.text = "Temp. " + GameConfigs.TempRecoverPerNormalBath + "℃, Spirit +" + GameConfigs.SpiritRecoverPerBath+".";
 
 		if (_gameData.CountInHome (4100) < GameConfigs.WaterForBath) {
 			bathMatText.color = Color.red;

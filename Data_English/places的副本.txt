@@ -11,8 +11,8 @@ id,actionType,actionPara,Name,desc
 302,5,300|77;301|211;302|211;303|77;304|36,Hunt,Hunt for food and materials.
 303,3,200;200;2100|95;2101|90;2106|80;2200|70;2201|70;3102|100;3402|30;4101|100;4103|90,Search,Search the place.
 401,6,Mayor;Robbers and thieves are wondering around.Help us and kill them!;10001,Mayor,Talk with him.
-402,6,Bar Tender;Come on! Show me your courage!;10002,Bar,"Welcome, young man!"
-403,5,400|139;401|71;402|71,Hunt,Track suspicious man.
+402,6,Bar Tender;Come on! Show me your courage!;10002,Bar,WelcomeÿYoung man!
+403,5,400|139;401|71;402|71,Hunt,Investigate suspicious men.
 404,3,150;150;2102|90;3102|100;3402|30;4101|100;400|50;404|50;4109|50,Search,Search the place.
 501,5,500|111;501|25;502|111;503|155,Hunt,Kill the bad guy.
 502,3,100;100;2102|90;2200|70;2201|70;3402|30;4101|100;400|50;404|50;4109|50,Search,Search the place.
@@ -24,15 +24,15 @@ id,actionType,actionPara,Name,desc
 703,3,150;150;2108|75;2303|30;3102|100;3402|30;4106|80;4108|40,Search,Search the place.
 801,6,Wolf Patriarch; For Honor£¡;10006,Patriarch,Talk with him.
 802,6,Worf Elder;Death is another way to live.;10007,Elder,Talk with him.
-803,5,800|50;810|200;811|200;812|50;813|50,Hunt,Track suspicious man.
+803,5,800|50;810|200;811|200;812|50;813|50,Hunt,Investigate suspicious men.
 804,3,100;100;2102|90;2200|70;2201|70;2300|30;2301|30;2302|30;3102|100;3402|30;4101|100;400|50;4109|50,Search,Search the place.
 901,6,Snake Patriarch;We are the true protector of this land!;10011,Patriarch,Talk with him.
 902,6,Snake Elder;Victory is always accompanied with blood and killing.;10012,Elder,Talk with him.
-903,5,900|50;910|200;911|200;912|50;913|50,Hunt,Track suspicious man.
+903,5,900|50;910|200;911|200;912|50;913|50,Hunt,Investigate suspicious men.
 904,3,100;100;2102|90;2200|70;2201|70;2300|30;2301|30;2302|30;3102|100;3402|30;4101|100;400|50;4109|50,Search,Search the place.
 1001,6,Bear Patriarch;For the honor of bear!;10016,Patriarch,Talk with him.
 1002,6,Bear Elder;The diamonds belong to us!;10017,Elder,Talk with him.
-1003,5,1000|50;1010|200;1011|200;1012|50;1013|50,Hunt,Track suspicious man.
+1003,5,1000|50;1010|200;1011|200;1012|50;1013|50,Hunt,Investigate suspicious men.
 1004,3,100;100;2102|90;2200|70;2201|70;2300|30;2301|30;2302|30;3102|100;3402|30;4101|100;400|50;4109|50,Search,Search the place.
 1101,6,Gimli the Dwarf;Where are my ancestors? Follow my lead!;10021,Gimli,Talk with him.
 1102,3,80;80;2102|90;2300|30;2301|30;2302|30;2400|15;2401|15;2402|15;3102|100;3402|30;4101|100;400|50;4109|50,Search,Search the place.
@@ -77,7 +77,7 @@ id,actionType,actionPara,Name,desc
 3001,6,Harrison;What a beautiful world. Devour it!<color=yellow><Challege him and get the Abyss out of the war.></color>;3308,Harrison,The ruler of Abyss exposed his fangs.
 3002,5,3300|10;3301|10;3302|10;3303|10;3304|10;3305|10;3306|10;3307|10;3309|100;3310|100;3311|100;3312|100;3313|100;3314|100;3315|100;3316|100,Hunt,Defeat everyone int your way. 
 3003,3,2000;2000;400|100;403|100;2300|100;2301|100;2302|100;2400|100;2401|100;2402|100;2405|100;2413|20;3102|200;4104|200;4109|300;4110|100;4214|100;4204|20;0|1840,Search,Search the place.
-3101,6,Skull Dragon;Death will come to you however powerful you are.<color=yellow><Challege him and get the Death out of the war.></color>;3408,Skull Dragon,The ruler of Death pretend to be sleeping.
+3101,6,Skull Dragon;Death will come to you however powerful you are.<color=yellow><Challege him and get the Death out of the war.></color>;3408,Skull Dragon,The ruler of Death pretends to be sleeping.
 3102,5,3400|10;3401|10;3402|10;3403|10;3404|10;3405|10;3406|10;3407|10;3409|100;3410|100;3411|100;3412|100;3413|100;3414|100;3415|100;3416|100;3417|100,Hunt,Defeat everyone int your way. 
 3103,3,2000;2000;400|100;403|100;2300|100;2301|100;2302|100;2400|100;2401|100;2402|100;2405|100;2414|20;3102|200;4104|200;4109|300;4110|100;4214|100;4204|20;0|1840,Search,Search the place.
 2600,6,Old Man;The visitors are not friendly.They occupied our land and build there own cities. There are wars all over the land. Man and wizard ~ Elves and the undead ~ even devil from the abyss are fighting.Our Land will be destroyed! <color=yellow> Are you the Savior sent by God? Defeat their leaders and terminate the war. </color>,Old Man,Talk with him.
