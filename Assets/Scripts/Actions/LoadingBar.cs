@@ -50,7 +50,7 @@ public class LoadingBar : MonoBehaviour {
 
 
 	IEnumerator LoadingInProgress(){
-		float f = 0.001f*totalTime;
+		float f = 0.025f*totalTime;
 		yield return new WaitForSeconds (f);
 		StartLoading ();
 	}

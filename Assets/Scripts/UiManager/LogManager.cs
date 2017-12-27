@@ -4,7 +4,7 @@ using System.Collections;
 
 public class LogManager : MonoBehaviour {
 	private Text[] logs;
-	private int cNum = 35;
+	private int cNum = 36;
 
 	void Start(){
 		logs = this.gameObject.GetComponentsInChildren<Text> ();
@@ -13,10 +13,10 @@ public class LogManager : MonoBehaviour {
 		if (GameData._playerData.firstTimeInGame == 0) {
 			GameData._playerData.firstTimeInGame = 1;
 			PlayerPrefs.SetInt ("FirstTimeInGame", 1);
-			AddLog ("After a big storm, you opened you eye...");
-			StartCoroutine (FirstLog (1f, "It's a strange place..."));
+			AddLog ("After a big storm, you woke up.");
+			StartCoroutine (FirstLog (1f, "It's a strange place."));
 			StartCoroutine (FirstLog (2f, "You decided to keep alive."));
-			StartCoroutine (FirstLog (3f, "There is water and food in the backpack,"));
+			StartCoroutine (FirstLog (3f, "There is water and food in the backpack."));
 			StartCoroutine (FirstLog (4f, "Building a shelter is a good choice."));
 			StartCoroutine (FirstLog (5f, "Click [Kitchen] to Build."));
 			//你也可以看看页面左下角的[背包]，或者打开右下角的[地图]到四周转转。
