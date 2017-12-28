@@ -684,13 +684,13 @@ public class GameData : MonoBehaviour {
 
 			if (_playerData.tempNow > _playerData.property [12]) {
 				GetComponentInChildren<PanelManager> ().GoToPanel ("Death");
-				gameObject.GetComponentInChildren<DeathActions> ().UpdateDeath ("Cold");
+				gameObject.GetComponentInChildren<DeathActions> ().UpdateDeath ("Hot");
 				Debug.Log ("Die of Hot");
 			}
 
 			if (_playerData.tempNow < _playerData.property [11]) {
 				GetComponentInChildren<PanelManager> ().GoToPanel ("Death");
-				gameObject.GetComponentInChildren<DeathActions> ().UpdateDeath ("Hot");
+				gameObject.GetComponentInChildren<DeathActions> ().UpdateDeath ("Cold");
 				Debug.Log ("Die of Cold");
 			}
 			break;

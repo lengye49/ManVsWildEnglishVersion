@@ -473,7 +473,7 @@ public class BattleActions : MonoBehaviour {
 			return;
 		}
 
-		string s = "You defeated" + enemy.name + ".";
+		string s = "You defeated " + enemy.name + ".";
 		AddLog (s, 1);
 
 		if (enemy.mapOpen > 0) {
@@ -517,7 +517,7 @@ public class BattleActions : MonoBehaviour {
 			}
 			s = s.Substring (0, s.Length - 1) ;
 			if (enemy.renown > 0) {
-				s += " and " + enemy.renown + "renown.";
+				s += " and " + enemy.renown + " renown.";
 			} else {
 				s += "。";
 			}

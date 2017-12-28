@@ -81,8 +81,8 @@ id,actionType,actionPara,Name,desc
 3102,5,3400|10;3401|10;3402|10;3403|10;3404|10;3405|10;3406|10;3407|10;3409|100;3410|100;3411|100;3412|100;3413|100;3414|100;3415|100;3416|100;3417|100,Hunt,Defeat everyone int your way. 
 3103,3,2000;2000;400|100;403|100;2300|100;2301|100;2302|100;2400|100;2401|100;2402|100;2405|100;2414|20;3102|200;4104|200;4109|300;4110|100;4214|100;4204|20;0|1840,Search,Search the place.
 2600,6,Old Man;The visitors are not friendly.They occupied our land and build there own cities. There are wars all over the land. Man and wizard ~ Elves and the undead ~ even devil from the abyss are fighting.Our Land will be destroyed! <color=yellow> Are you the Savior sent by God? Defeat their leaders and terminate the war. </color>,Old Man,Talk with him.
-2601,6,Diary;Jan.The visitors landed from overseas; Feb.They fought against elves; Apr.The Abyss invaded; July.Human civil war started. The Death escaped into the swamp and the Truth built towers in the northwest; ,A Diary,Check the diary.
-2602,6,Human KnightYou are not allowed to be here!;2602,Human Knight,Challenge
+2601,6,Diary;Jan:The visitors landed from overseas. Feb:They fought against elves. Apr:The Abyss invaded. July:Human civil war started. The Death escaped into the swamp and the Truth built towers in the northwest.,A Diary,Check the diary.
+2602,6,Human Knight;You are not allowed to be here!;2602,Human Knight,Challenge
 2603,6,Master of Light;I will punish you on behalf of the sun!;2603,Master of Light,Challenge
 2604,6,Wood Elf;Leave here now!;2604,Wood Elf,Challenge
 2605,6,Flying Devil;Nice flesh...;2605,Flying Devil,Challenge

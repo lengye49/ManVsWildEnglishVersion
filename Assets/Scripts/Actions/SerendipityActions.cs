@@ -194,7 +194,7 @@ public class SerendipityActions : MonoBehaviour {
 
     void ResetMessageList(){
         messageList = new Dictionary<int, string>();
-		messageList.Add(0,"The residents on the land is complex, there are various creatures.");
+		messageList.Add(0,"The residents on the land are complex, human, elves, dragons,etc.");
 		messageList.Add(1,"There are many space rifts around the dungeon.");
 		messageList.Add(2,"There are powerful creatures in the dungeon.");
         messageList.Add(3,"During the night, be careful of the ghosts.");
@@ -206,7 +206,7 @@ public class SerendipityActions : MonoBehaviour {
 		messageList.Add(9,"Rumors say an evil master is in control of the dungeon.");
         messageList.Add(10,"Be careful of the monsters on the hill.");
         messageList.Add(11,"The creatures are growing more powerful.");
-		messageList.Add(12,"The residents on the land is complex, there are various creatures.");
+		messageList.Add(12,"The residents on the land are complex, human, elves, dragons,etc.");
 		messageList.Add(13,"There are many space rifts around the dungeon.");
 		messageList.Add(14,"There are powerful creatures in the dungeon.");
 		messageList.Add(15,"During the night, be careful of the ghosts.");
@@ -218,7 +218,7 @@ public class SerendipityActions : MonoBehaviour {
 		messageList.Add(21,"Rumors say an evil master is in control of the dungeon.");
 		messageList.Add(22,"Be careful of the monsters on the hill.");
 		messageList.Add(23,"The creatures are growing more powerful.");
-		messageList.Add(24,"The residents on the land is complex, there are various creatures.");
+		messageList.Add(24,"The residents on the land are complex, human, elves, dragons,etc.");
 		messageList.Add(25,"There are many space rifts around the dungeon.");
 		messageList.Add(26,"There are powerful creatures in the dungeon.");
 		messageList.Add(27,"During the night, be careful of the ghosts.");
