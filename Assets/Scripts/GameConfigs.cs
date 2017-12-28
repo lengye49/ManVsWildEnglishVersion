@@ -99,7 +99,7 @@ public class GameConfigs{
 	public static float[] CookingTimeDiscount = { 1f, 0.9f, 0.7f,0.5f };
 	public static float[] CookingIncreaseRate = { 1f, 1.2f, 1.5f ,1.8f};
 	public static float[] WaterCollectingRate = { 1f, 1.2f, 1.5f };
-	public static float[] GhostComingProp = { 0.05f, 0.02f, 0.01f };
+	public static float[] GhostComingProp = { 0.1f, 0.07f, 0.04f };
 
 	public static int StartThiefEvent = 20;//第20天开始触发盗贼
 	public static int StartGhostEvent = 3;//第3天开始触发幽灵

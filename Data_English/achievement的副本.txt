@@ -28,7 +28,7 @@ id,name,desc,req,ap
 27,Gambler of Life,Execute 100 magic attacks.,100,
 31,Walking Map,Find 20 new places.,20,
 32,Dragon Slayer,Defeat 3 dragons.,3,
-33,Build a Master,Upgrade all buildings to max level.,1,
+33,Master of Building,Upgrade all buildings to max level.,1,
 34,True Love,Live to 200 days.,200,
 35,Scientist,Upgrade all technology.,1,
 36,Dragon Knight,Ride a dragon.,1,

@@ -23,7 +23,7 @@ public class SerendipityActions : MonoBehaviour {
     private GameData _gameData;
 
     void Start(){
-        Vungle.init("59b4965c7e75cb8114000385", "Test_iOS", "vungleTest");
+        Vungle.init("5a4448d7d49ac43a0c00c018", "Test_iOS", "vungleTest");
         Vungle.onAdFinishedEvent += (args) =>{
             AdFinished(args);
         } ;
@@ -63,11 +63,12 @@ public class SerendipityActions : MonoBehaviour {
         int r = Random.Range(0, 9999);
 
         //不触发意外事件
-        if (r > 500)
+        if (r > 750)
             return;
 
         //0信息 1广告
-        if (r > 200)
+        //如果广告没有准备好，则显示信息
+        if (r > 500 || !Vungle.isAdvertAvailable())
             ShowSerendipity(0);
         else
             ShowSerendipity(1);

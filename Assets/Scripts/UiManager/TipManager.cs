@@ -395,7 +395,7 @@ public class TipManager : MonoBehaviour {
 		Building b = new Building ();
 		switch (s) {
 		case "BedRoom":
-			b = LoadTxt.GetBuilding ("BedRoom", GameData._playerData.BedRoomOpen + 1);
+			b = LoadTxt.GetBuilding ("Bedroom", GameData._playerData.BedRoomOpen + 1);
 			if (!CheckReq (b.combReq))
 				break;
 			else {

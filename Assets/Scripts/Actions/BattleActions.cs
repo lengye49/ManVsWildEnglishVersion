@@ -164,6 +164,12 @@ public class BattleActions : MonoBehaviour {
 		enemy.name = m.name;
 		//怪物实力随等级增强
 		enemy.level = m.level + GameData._playerData.dayNow / GameConfigs.MonsterUpgradeTime;
+
+        //鬼的实力随地图增加而增加
+        if (m.id == 1 || m.id == 2 || m.id == 3)
+        {
+            enemy.level += GameData._playerData.placeNowId * 2;   
+        }
 //		Debug.Log (enemy.level);
 
 		MonsterModel md = LoadTxt.GetMonsterModel (m.model);
