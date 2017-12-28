@@ -267,6 +267,9 @@ public class LoadTxt : MonoBehaviour {
 
 		for (int i = 0; i < strs.Length-1; i++) {
 			Monster m = new Monster();
+            m.id = int.Parse (ReadTxt.GetDataByRowAndCol (strs, i + 1, 0));
+            Debug.Log(m.id);
+
 			m.level = int.Parse (ReadTxt.GetDataByRowAndCol (strs, i + 1, 2));
 			m.livePlace = int.Parse (ReadTxt.GetDataByRowAndCol (strs, i + 1, 15));
 			if (m.level < minLv || m.level > maxLv || m.livePlace != livePlace)
