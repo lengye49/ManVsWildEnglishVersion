@@ -831,7 +831,7 @@ public class TipManager : MonoBehaviour {
 				foreach (int key in extraM.property.Keys) {
 					de = PlayerData.GetPropName (key)+" ";
 					p = extraM.property [key];
-					de += (p > 0 ? "+" : "-");
+					de += (p > 0 ? "+" : "");
 					if (key < 25)
 						de += p.ToString ();
 					else

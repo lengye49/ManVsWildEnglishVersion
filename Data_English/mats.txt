@@ -39,7 +39,7 @@ id,type,name,desc,price,property,req,needBlueprint,makingType,timeCost,castHp,Ta
 402,10,Dragon Tail,1,35,26|20,20;2404|1;2200|10,0,Accessory,1,0,箭矢,0,2,Arrow for ranged weapon.
 403,10,The Tracer,1,30,27|10,,0,none,0,0,箭矢,0,2,Arrow for ranged weapon.
 404,0,Paper,1,20,,5;2103|5;4100|1,0,Accessory,1,0,消耗品,0,1,A piece of paper.
-500,6,Leather hat,1,30,15|2;18|1,1;2102|3,0,Head,1,0,头盔,0,1,Helmet.
+500,6,Leather Hat,1,30,15|2;18|1,1;2102|3,0,Head,1,0,头盔,0,1,Helmet.
 501,6,Scarf of Thief,1,100,15|5;18|2,,0,none,0,0,头盔,0,2,Helmet.
 502,6,Helmet,1,210,15|8;18|2,1;2200|4;2104|4;2105|5,0,Head,2,0,头盔,0,2,Helmet.
 503,6,Helmet of Guard,1,300,15|10;18|3,,0,none,0,0,头盔,0,2,Helmet.
@@ -142,12 +142,12 @@ id,type,name,desc,price,property,req,needBlueprint,makingType,timeCost,castHp,Ta
 4214,2,Torch,1,60,2|1;10|5,10;1100|3;2102|3,0,Kitchen,1,0,消耗品,0,1,A disposable torch.
 4216,2,Soul Drug,1,100,0|10,5;2109|5;2202|1,0,Kitchen,1,0,消耗品,0,2,Amazing drug made of poison.
 4200,2,Bread,1,100,4|10;0|5,2;4101|5;4100|1,0,Kitchen,1,0,消耗品,0,2,Food.
-4201,2,Ice water,1,100,6|5;10|-5,3;4100|3;4109|1,0,Kitchen,1,0,消耗品,0,2,Drinks.
-4202,2,Hot water,1,100,6|5;10|5,5;4100|5;4214|2,0,Kitchen,1,0,消耗品,0,2,Drinks.
+4201,2,Ice Water,1,100,6|5;10|-5,3;4100|3;4109|1,0,Kitchen,1,0,消耗品,0,2,Drinks.
+4202,2,Hot Water,1,100,6|5;10|5,5;4100|5;4214|2,0,Kitchen,1,0,消耗品,0,2,Drinks.
 4203,2,Tea,2,130,6|8;2|5,1;4110|1;4100|1,0,Kitchen,1,0,消耗品,0,2,Drinks.
 4204,2,Barbecue,1,120,4|12;0|8,3;4102|3;4214|1,0,Kitchen,1,0,消耗品,0,2,Food.
 4205,2,Roasted Carp,1,120,4|10;0|10,3;4105|3;4214|1,0,Kitchen,1,0,消耗品,0,2,Food.
-4206,2,Roasted fish,1,120,4|10;8|2;0|8,3;4107|3;4214|1,0,Kitchen,1,0,消耗品,0,2,Food.
+4206,2,Roasted Fish,1,120,4|10;8|2;0|8,3;4107|3;4214|1,0,Kitchen,1,0,消耗品,0,2,Food.
 4207,2,Juice,1,120,4|2;6|7;2|3,2;4104|5;4100|1,0,Kitchen,1,0,消耗品,0,2,Drinks.
 4208,2,Whiskey,2,120,6|2;2|5;10|5,,0,none,0,0,Wine,0,2,Alcoholic Drinks.
 4209,2,Wine,2,120,6|4;2|8,,0,none,0,0,Wine,0,2,Alcoholic Drinks.
@@ -159,6 +159,6 @@ id,type,name,desc,price,property,req,needBlueprint,makingType,timeCost,castHp,Ta
 4300,2,Cocktail,2,300,6|3;2|24;10|3,2;4208|3;4207|1,0,Kitchen,1,0,Wine,0,3,Alcoholic Drinks.
 4301,2,Cold Wine,2,190,6|6;2|8;10|-5,2;4208|2;4109|1,0,Kitchen,1,0,Wine,0,2,Alcoholic Drinks.
 4302,2,Iced Tea,2,190,6|8;2|6;10|-5,3;4203|3;4109|2,0,Kitchen,1,0,消耗品,0,2,Drinks.
-4303,2,Hot tea,2,190,6|8;2|6;10|5,3;4203|3;4214|2,0,Kitchen,1,0,消耗品,0,2,Drinks.
+4303,2,Hot Tea,2,190,6|8;2|6;10|5,3;4203|3;4214|2,0,Kitchen,1,0,消耗品,0,2,Drinks.
 4304,2,Sweet Bread,2,300,4|10;0|10;2|10,5;4111|2;4200|5,0,Kitchen,1,0,消耗品,0,3,Food.
 4305,2,Burger,2,300,4|30;0|15,3;4200|2;4204|4;4103|1,0,Kitchen,1,0,消耗品,0,3,Food.
