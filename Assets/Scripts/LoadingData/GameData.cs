@@ -1,4 +1,4 @@
-﻿//Load and Store Player Data
+//Load and Store Player Data
 //Application.LoadLevel(Application.loadedLevel); // 重新调用当前场景
 using UnityEngine;
 using UnityEngine.UI;//测试用
@@ -478,7 +478,7 @@ public class GameData : MonoBehaviour {
         }
         GetDailyTribute();
 
-		if (_playerData.dayNow % 3 == 0) {
+		if (_playerData.dayNow % 5 == 0) {
 			StoreMemmory ();
 			UpdateSacrificeList ();
 			_logManager.AddLog ("Memmory saved, Sacrifice updated.", true);
@@ -1460,7 +1460,7 @@ public class GameData : MonoBehaviour {
 		}
 		if (d == 7 && _playerData.WarehouseOpen==1) {
 			StoreItem (33020000, 5);//空间宝石
-			_logManager.AddLog( "The Mayor sendt you his notes.");
+			_logManager.AddLog( "The Mayor sent you his notes.");
 			_logManager.AddLog( "Warrior Manual +5");
 		}
 		if (d == 14 && _playerData.WarehouseOpen==1) {

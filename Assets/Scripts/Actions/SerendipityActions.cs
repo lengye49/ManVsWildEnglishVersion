@@ -57,7 +57,7 @@ public class SerendipityActions : MonoBehaviour {
     /// <param name="outdoor">If set to <c>true</c> outdoor.</param>
     public void CheckSerendipity(){
         
-        if (GameData._playerData.minutesPassed < 10800)
+        if (GameData._playerData.minutesPassed < 1440)
             return;
 
         int r = Random.Range(0, 9999);
